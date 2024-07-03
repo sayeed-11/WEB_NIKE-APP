@@ -11,7 +11,7 @@ import Footer from "./Components/Footer";
 import { ProductDetails } from "./Components/Products";
 
 function App() {
-  const [isView, setView] = useState(true);
+  const [isView, setView] = useState(false);
   return (
     <div className={`App  w-full min-h-screen bg-slate-100 relative`}>
      <NavigationBar/>
@@ -19,11 +19,11 @@ function App() {
      <PopularProducts/>
      <AboutPage/>
      <Products isView={isView} setView={setView}/>
-     <Description/>
+     {/* <Description/>
      <Feedback/>
      <Discount/>
      <Footer/>
-      {isView && <ProductDetails isView={isView} setView={setView}/>}
+      {isView && <ProductDetails isView={isView} setView={setView}/>} */}
     </div>
   );
 }

@@ -71,7 +71,7 @@ const Products = (props) => {
                     {
                         popular.slice(0, 15).map((data, index) => {
                             return (
-                                <div className='bg-gray-100 rounded-md shadow-md overflow-hidden relative flex flex-col items-center max-w-[200px] hover:bg-white hover:scale-[1.02] transition-all'>
+                                <div className='bg-gray-100 rounded-md shadow-md overflow-hidden relative flex flex-col items-center max-w-[200px] hover:bg-white hover:scale-[1.02] transition-all scale-[0.92] sm:scale-[1]'>
                                     <div className='w-full grid p-5 relative'>
                                         <img className='-rotate-[30deg] -translate-x-5 -translate-y-5 scale-[1.5] w-[100%] rounded-full aspect-square object-cover pointer-events-none' src={data.img} alt="" />
                                         <div className=' flex items-start z-30 flex-col gap-y-1 absolute px-2 py-1 rounded-ee-lg'>
