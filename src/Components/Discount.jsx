@@ -10,12 +10,12 @@ const Discount = () => {
                 <h1 className='absolute font-nike italic text-[5rem] sm:text-[10rem] font-semibold right-10 -bottom-5 sm:-bottom-10  text-white/[0.1]'>AIR</h1>
                 <div className='flex flex-col justify-center sm:items-center items-start gap-y-3 sm:gap-y-0'>
                     <div className='flex items-baseline gap-x-3'>
-                        <div className='h-1 w-10 lg:w-20 bg-yellow-500' />
-                        <h1 className='text-[1.5rem] lg:text-[3rem] font-nike text-yellow-500'>Spring Sale</h1>
+                        <div className='h-1 w-10 lg:w-20 bg-lime-500' />
+                        <h1 className='text-[1.5rem] lg:text-[3rem] font-nike text-lime-500'>Spring Sale</h1>
                     </div>
-                    <h1 className='font-nike text-[2rem] sm:text-[3rem] lg:text-[4rem] italic flex gap-x-3'><p className='bg-yellow-500 rounded-full text-[0.8rem] sm:text-[1.5rem] sm:min-w-20 min-w-12 max-h-12 sm:max-h-20 aspect-square grid place-items-center'>50%</p> <p>SALE OFF</p></h1>
+                    <h1 className='font-nike text-[2rem] sm:text-[3rem] lg:text-[4rem] italic flex gap-x-3'><p className='bg-lime-500 rounded-full text-[0.8rem] sm:text-[1.5rem] sm:min-w-20 min-w-12 max-h-12 sm:max-h-20 aspect-square grid place-items-center'>50%</p> <p>SALE OFF</p></h1>
                     <button className=' font-text text-white text-xs'>
-                        <div className='bg-yellow-500 px-6 py-3 rounded-3xl space-x-3'>
+                        <div className='bg-lime-500 px-6 py-3 rounded-3xl space-x-3'>
                             <span>Shop Now</span>
                             <i className="fa-solid fa-arrow-right -rotate-45" />
                         </div>

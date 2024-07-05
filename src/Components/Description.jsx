@@ -17,8 +17,8 @@ const Description = () => {
 
                 <div>
                     <div className='flex items-baseline gap-x-3 justify-end'>
-                        <div className='w-28 h-[3px] bg-yellow-500 rounded-3xl' />
-                        <h1 className='font-nike text-xl sm:text-4xl text-yellow-500'>The Best Shoe</h1>
+                        <div className='w-28 h-[3px] bg-lime-500 rounded-3xl' />
+                        <h1 className='font-nike text-xl sm:text-4xl text-lime-500'>The Best Shoe</h1>
                     </div>
                     <h1 className='font-nike text-[2.7rem] sm:text-[4rem] md:text-[4rem] italic font-semibold -mt-2 sm:-mt-6 text-right'>BEST PEOPLE</h1>
                 </div>
@@ -31,7 +31,7 @@ const Description = () => {
                         <p className='font-text text-xs '>Manufactured products team building core comprehencies standard</p>
                     </div>
                     <div className='bg-white p-5 space-y-5 rounded-md shadow-md'>
-                        <i className="fa-solid fa-eraser text-[3.5rem] text-yellow-500" />
+                        <i className="fa-solid fa-eraser text-[3.5rem] text-lime-500" />
                         <h1 className='font-nike text-sm'>Ultra Durable Rubber Sole</h1>
                         <p className='font-text text-xs '>Manufactured products team building core comprehencies standard</p>
                     </div>

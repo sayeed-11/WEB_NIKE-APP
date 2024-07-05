@@ -22,17 +22,17 @@ const Products = (props) => {
     }
 
     const addFavData = (index) => {
-        if(!favArray.includes(index)){
+        if (!favArray.includes(index)) {
             setFavDatainArray([...favArray, index])
-        } else{
+        } else {
             removeItemOnce(favArray, index);
             setFavDatainArray([...favArray]);
         }
     }
     const addCartData = (index) => {
-        if(!cartArray.includes(index)){
-        setFavDataincartArray([...cartArray, index]);
-        }else{
+        if (!cartArray.includes(index)) {
+            setFavDataincartArray([...cartArray, index]);
+        } else {
             removeItemOnce(cartArray, index);
             setFavDataincartArray([...cartArray]);
         }
@@ -41,17 +41,17 @@ const Products = (props) => {
     function removeItemOnce(arr, value) {
         var index = arr.indexOf(value);
         if (index > -1) {
-          arr.splice(index, 1);
+            arr.splice(index, 1);
         }
         return arr;
-      }
+    }
 
     useEffect(() => {
         console.log(favArray);
     })
 
     return (
-        <div className='relative bg-slate-100 py-10 sm:py-20 px-2 sm:px-10'>
+        <div className='relative bg-slate-100 py-10 sm:py-20 px-0 '>
             <h1 className='absolute font-nike italic text-[4rem] sm:text-[7rem] top-0 right-0 sm:right-10 font-bold text-black/[0.03]'>PRODUCTS</h1>
             <div className='flex flex-col items-center gap-y-5 sm:gap-y-10'>
                 <h1 className='text-[3rem] font-nike font-semibold'>Best Selling</h1>
@@ -60,35 +60,35 @@ const Products = (props) => {
                         productType.map((value, index) => {
                             return (
                                 <button className='min-w-[150px]' onClick={() => { selection(value) }} key={index}>
-                                    <span className={`w-full h-[20px] px-10 py-3 rounded-full text-xs font-text font-bold  ${selected === value ? "bg-yellow-500 text-white" : "text-yellow-500 border-2 border-yellow-500"}`}>{value}</span>
+                                    <span className={`w-full h-[20px] px-10 py-3 rounded-full text-xs font-text font-bold  ${selected === value ? "bg-lime-500 text-white" : "text-lime-500 border-2 border-lime-500"}`}>{value}</span>
                                 </button>
                             )
                         })
                     }
                 </div>
 
-                <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 place-items-center gap-x-3 sm:gap-x-5 gap-y-3 sm:gap-y-5'>
+                <div className='flex flex-wrap justify-center sm:grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 place-items-center gap-x-3 sm:gap-x-5 gap-y-3 sm:gap-y-5'>
                     {
-                        popular.slice(0, 15).map((data, index) => {
+                        popular.slice(0, 6).map((data, index) => {
                             return (
-                                <div className='bg-gray-100 rounded-md shadow-md overflow-hidden relative flex flex-col items-center max-w-[200px] hover:bg-white hover:scale-[1.02] transition-all scale-[0.92] sm:scale-[1]'>
+                                <div className='bg-gray-100 rounded-md shadow-md overflow-hidden relative flex flex-row h-auto sm:h-auto  sm:flex-col items-center max-w-[90%] sm:max-w-[300px] hover:bg-white hover:scale-[1.02] transition-all scale-[1] sm:scale-[1]'>
                                     <div className='w-full grid p-5 relative'>
-                                        <img className='-rotate-[30deg] -translate-x-5 -translate-y-5 scale-[1.5] w-[100%] rounded-full aspect-square object-cover pointer-events-none' src={data.img} alt="" />
-                                        <div className=' flex items-start z-30 flex-col gap-y-1 absolute px-2 py-1 rounded-ee-lg'>
-                                            <i onClick={() => { addFavData(index)}} className={`fa-regular fa-heart  w-8 aspect-square grid place-items-center rounded-full  text-sm scale-[1] ${inArray(index, favArray) ? " bg-yellow-500 text-white" : "text-yellow-500 bg-white"} shadow-md active:scale-[0.9]`} />
-                                            <i onClick={() => { addCartData(index) }} className={`fa-solid fa-cart-shopping w-8 aspect-square grid place-items-center rounded-full text-sm scale-[1] ${inArray(index, cartArray) ? "bg-yellow-500 text-white" : "text-yellow-500 bg-white"} shadow-md active:scale-[0.9]`} />
-                                            <i onClick={() => { setView(!isView) }} className="fa-regular fa-eye w-8 aspect-square grid place-items-center rounded-full text-yellow-500 text-sm scale-[1] bg-white shadow-md active:scale-[0.9]" />
+                                        <img className='-rotate-[30deg] sm:-translate-x-12 translate-x-0 -translate-y-5 sm:-translate-y-12 scale-[1.55] sm:scale-[1.1] w-[100%] rounded-full aspect-square object-cover pointer-events-none' src={data.img} alt="" />
+                                        <div className=' flex items-start z-30 flex-col gap-y-1 absolute sm:right-0 sm:top-0 gap-x-2 px-2 py-1 rounded-ee-lg'>
+                                            <i onClick={() => { addFavData(index) }} className={`fa-regular fa-heart  w-10 sm:w-12 aspect-square grid place-items-center rounded-full  text-sm scale-[1] ${inArray(index, favArray) ? " bg-lime-500 text-white" : "text-lime-500 bg-white"} shadow-md active:scale-[0.9]`} />
+                                            <i onClick={() => { addCartData(index) }} className={`fa-solid fa-cart-shopping w-10 sm:w-12 aspect-square grid place-items-center rounded-full text-sm scale-[1] ${inArray(index, cartArray) ? "bg-lime-500 text-white" : "text-lime-500 bg-white"} shadow-md active:scale-[0.9]`} />
+                                            <i onClick={() => { setView(!isView) }} className="fa-regular fa-eye w-10 sm:w-12 aspect-square grid place-items-center rounded-full text-lime-500 text-sm scale-[1] bg-white shadow-md active:scale-[0.9]" />
                                         </div>
                                     </div>
-                                    <div className=' w-full flex justify-between p-2'>
+                                    <div className=' w-full flex flex-col gap-y-10 px-3 sm:flex-row h-full sm:h-auto py-5 sm:py-0 justify-center sm:justify-between items-center sm:items-center p-2'>
                                         <div>
-                                            <h1 className='font-nike text-sm text-nowrap text-ellipsis overflow-hidden w-[90%] lg:w-auto'>{data.name}</h1>
+                                            <h1 className='font-nike text-sm text-nowrap text-ellipsis overflow-hidden w-[100%] sm:w-[100%] lg:w-auto'>{data.name}</h1>
                                             <div>
                                                 {
                                                     [1, 2, 3, 4, 5].map((star) => {
                                                         return (
                                                             <span>
-                                                                <i className={`fa-solid ${star !== 5 ? "fa-star" : "fa-star-half-stroke"} text-xs text-yellow-500`} />
+                                                                <i className={`fa-solid ${star !== 5 ? "fa-star" : "fa-star-half-stroke"} text-xs text-lime-500`} />
                                                             </span>
                                                         )
                                                     })
@@ -99,7 +99,10 @@ const Products = (props) => {
                                                 <span className='text-slate-400 line-through'>$ 25.99</span>
                                             </div>
                                         </div>
-                                        <i className="fa-solid fa-arrow-right -rotate-45 bg-yellow-500 max-w-10 max-h-10 flex justify-center items-center text-xs text-white shadow-md py-5 aspect-square rounded-full" />
+                                        <button className='bg-lime-500 flex justify-center items-center px-5 py-3 gap-x-3 sm:ga-x-1 text-xs rounded-full '>
+                                            <span className='text-white'>Buy Now</span>
+                                            <i className="fa-solid fa-arrow-right -rotate-45 text-xs text-white rounded-full" />
+                                        </button>
                                     </div>
                                 </div>
                             )
@@ -107,7 +110,7 @@ const Products = (props) => {
                     }
                 </div>
                 <button className='mt-5'>
-                    <span className=' bg-yellow-500 text-white px-10 py-4 text-xs rounded-full'>View All Products</span>
+                    <span className=' bg-lime-500 text-white px-10 py-4 text-xs rounded-full'>View All Products</span>
                 </button>
             </div>
 
@@ -150,10 +153,10 @@ export const ProductDetails = (prop) => {
     return (
         <div className='top-0 fixed w-full h-screen bg-black/[0.7] z-50 flex justify-center items-center pt-0 overflow-auto'>
             <div className='box w-[90%] md:w-[90%] max-h-[85%] lg:w-[80%] bg-white flex flex-col p-3 gap-y-3 lg:gap-y-5 overflow-auto'>
-                <div className='nav w-full h-12 md:h-14 border-b-[2px] border-yellow-500 flex justify-between items-start'>
+                <div className='nav w-full h-12 md:h-14 border-b-[2px] border-lime-500 flex justify-between items-start'>
                     <img className='w-16 h-[12]' src={nike_main_logo} alt="" />
                     <button onClick={() => { setView(!isView) }} className='active:scale-[0.97]'>
-                        <i className="fa-solid fa-xmark bg-yellow-500 px-3 md:py-2 py-1 text-white rounded-sm text-xl" />
+                        <i className="fa-solid fa-xmark bg-lime-500 px-3 md:py-2 py-1 text-white rounded-sm text-xl" />
                     </button>
                 </div>
                 <div className='details p-1 grid grid-cols-1 md:grid-cols-2 gap-y-5 '>
@@ -162,7 +165,7 @@ export const ProductDetails = (prop) => {
                             {
                                 data.images.slice(0, 5).map((pic, idx) => {
                                     return (
-                                        <button className={`${imgIndex === idx ? "border-[1.5px] border-yellow-500 rounded-md" : ""}`} key={idx} onClick={() => { setImage(pic); setIndex(data.images.indexOf(pic)) }}>
+                                        <button className={`${imgIndex === idx ? "border-[1.5px] border-lime-500 rounded-md" : ""}`} key={idx} onClick={() => { setImage(pic); setIndex(data.images.indexOf(pic)) }}>
                                             <img className='w-[full] object-cover aspect-square rounded-md ' src={pic} alt="" />
                                         </button>
                                     )
@@ -197,10 +200,10 @@ export const ProductDetails = (prop) => {
                             <div className='size flex flex-col'>
                                 <h1 className='font-nike uppercase font-semibold'>size</h1>
                                 <div className='flex gap-x-2  h-full items-center'>
-                                    <button className='w-8 md:w-10 py-2 border-[1.5px] border-yellow-500 rounded-sm text-xs font-bold font-text text-yellow-500 hover:bg-yellow-500 hover:text-white'>6</button>
-                                    <button className='w-8 md:w-10 py-2 border-[1.5px] border-yellow-500 rounded-sm text-xs font-bold font-text text-yellow-500 hover:bg-yellow-500 hover:text-white'>6.5</button>
-                                    <button className='w-8 md:w-10 py-2 border-[1.5px] border-yellow-500 rounded-sm text-xs font-bold font-text text-yellow-500 hover:bg-yellow-500 hover:text-white'>7</button>
-                                    <button className='w-8 md:w-10 py-2 border-[1.5px] border-yellow-500 rounded-sm text-xs font-bold font-text text-yellow-500 hover:bg-yellow-500 hover:text-white'>7.5</button>
+                                    <button className='w-8 md:w-10 py-2 border-[1.5px] border-lime-500 rounded-sm text-xs font-bold font-text text-lime-500 hover:bg-lime-500 hover:text-white'>6</button>
+                                    <button className='w-8 md:w-10 py-2 border-[1.5px] border-lime-500 rounded-sm text-xs font-bold font-text text-lime-500 hover:bg-lime-500 hover:text-white'>6.5</button>
+                                    <button className='w-8 md:w-10 py-2 border-[1.5px] border-lime-500 rounded-sm text-xs font-bold font-text text-lime-500 hover:bg-lime-500 hover:text-white'>7</button>
+                                    <button className='w-8 md:w-10 py-2 border-[1.5px] border-lime-500 rounded-sm text-xs font-bold font-text text-lime-500 hover:bg-lime-500 hover:text-white'>7.5</button>
                                 </div>
                             </div>
                             <div className="color flex flex-col">
@@ -215,11 +218,11 @@ export const ProductDetails = (prop) => {
                         </div>
 
                         <div className="buttons flex flex-col gap-y-2 md:flex-row justify-between mt-5 lg:mt-10">
-                            <button className='px-4 xl:px-8 text-xs border-[1.5px] border-yellow-500 text-yellow-500 py-3 rounded-sm uppercase font-nike flex items-center justify-center gap-x-2'>
+                            <button className='px-4 xl:px-8 text-xs border-[1.5px] border-lime-500 text-lime-500 py-3 rounded-sm uppercase font-nike flex items-center justify-center gap-x-2'>
                                 <span>add to wishlist</span>
                                 <i className="fa-solid fa-heart " />
                             </button>
-                            <button className='px-4 xl:px-10 text-xs bg-yellow-500 text-white py-3 rounded-sm uppercase font-nike flex items-center justify-center gap-x-2'>
+                            <button className='px-4 xl:px-10 text-xs bg-lime-500 text-white py-3 rounded-sm uppercase font-nike flex items-center justify-center gap-x-2'>
                                 <span>add to cart</span>
                                 <i className="fa-solid fa-cart-shopping " />
                             </button>

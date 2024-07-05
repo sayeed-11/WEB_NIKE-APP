@@ -13,17 +13,17 @@ import { ProductDetails } from "./Components/Products";
 function App() {
   const [isView, setView] = useState(false);
   return (
-    <div className={`App  w-full min-h-screen bg-slate-100 relative`}>
+    <div className={`App  w-full min-h-screen bg-slate-100 relative flex flex-col justify-center`}>
      <NavigationBar/>
-     <HomePage/>
-     <PopularProducts/>
+     <HomePage isView={isView} setView={setView}/>
+     <PopularProducts isView={isView} setView={setView}/>
      <AboutPage/>
      <Products isView={isView} setView={setView}/>
-     {/* <Description/>
+     <Description/>
      <Feedback/>
      <Discount/>
      <Footer/>
-      {isView && <ProductDetails isView={isView} setView={setView}/>} */}
+      {isView && <ProductDetails isView={isView} setView={setView}/>}
     </div>
   );
 }
