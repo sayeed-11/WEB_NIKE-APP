@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import { popular } from '../data/popular';
+import React, { useState } from 'react'
+// import { popular } from '../data/popular';
 import nike_main_logo from '../asset/nike_main_logo.png'
+import { JaordanShoes } from '../data/MenShoes/Jordan';
 
 
 const productType = ["All Shoes", "Athletic", "Authentic", "Lather", "Canvas"];
 
 
 const Products = (props) => {
-    const { isView, setView } = props;
+    const { isView, setView, setData } = props;
     const [selected, selection] = useState("All Shoes");
     const [favArray, setFavDatainArray] = useState([]);
     const [cartArray, setFavDataincartArray] = useState([]);
@@ -46,9 +47,23 @@ const Products = (props) => {
         return arr;
     }
 
-    useEffect(() => {
-        console.log(favArray);
-    })
+
+    const setProductData = (updatedData) => {
+        setData({
+            id: updatedData.id,
+            name: updatedData.name,
+            type: updatedData.type,
+            main_img: updatedData.img,
+            images: updatedData.colorsAvailable[0].images,
+            price: updatedData.price,
+            description: updatedData.description,
+            specification: "",
+            delivery_details: "",
+            Reviews: "",
+            color : updatedData.colorsAvailable.colorShown,
+            style : updatedData.colorsAvailable.style
+        })
+    }
 
     return (
         <div className='relative bg-slate-100 py-10 sm:py-20 px-0 '>
@@ -69,20 +84,23 @@ const Products = (props) => {
 
                 <div className='flex flex-wrap justify-center sm:grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 place-items-center gap-x-3 sm:gap-x-5 gap-y-3 sm:gap-y-5'>
                     {
-                        popular.slice(0, 6).map((data, index) => {
+                        JaordanShoes.slice(0, 9).map((data, index) => {
                             return (
-                                <div className='bg-gray-100 rounded-md shadow-md overflow-hidden relative flex flex-row h-auto sm:h-auto  sm:flex-col items-center max-w-[90%] sm:max-w-[300px] hover:bg-white hover:scale-[1.02] transition-all sm:py-5'>
+                                <div className='bg-gray-100 rounded-md shadow-md overflow-hidden relative grid grid-cols-2 h-auto sm:flex  sm:flex-col items-center max-w-[90%] sm:max-w-[300px] hover:bg-white hover:scale-[1.02] transition-all sm:py-5'>
                                     <div className='w-full grid p-5 relative'>
-                                        <img className='-rotate-[30deg] sm:-translate-x-14 translate-x-0 -translate-y-5 sm:-translate-y-14 scale-[1.55] sm:scale-[1.1] w-[100%] rounded-full aspect-square object-cover pointer-events-none' src={data.img} alt="" />
+                                        <img className='-rotate-[30deg] sm:-translate-x-16 -translate-x-4 -translate-y-8 sm:-translate-y-14 scale-[1.55] sm:scale-[1.1] w-[100%] rounded-full aspect-square object-cover pointer-events-none' src={data.img} alt="" />
                                         <div className=' flex items-start z-30 flex-col gap-y-1 absolute sm:right-0 sm:top-0 gap-x-2 px-2 py-1 rounded-ee-lg'>
                                             <i onClick={() => { addFavData(index) }} className={`fa-regular fa-heart  w-10 sm:w-12 aspect-square grid place-items-center rounded-full  text-sm scale-[1] ${inArray(index, favArray) ? " bg-lime-500 text-white" : "text-lime-500 bg-white"} shadow-md active:scale-[0.9]`} />
                                             <i onClick={() => { addCartData(index) }} className={`fa-solid fa-cart-shopping w-10 sm:w-12 aspect-square grid place-items-center rounded-full text-sm scale-[1] ${inArray(index, cartArray) ? "bg-lime-500 text-white" : "text-lime-500 bg-white"} shadow-md active:scale-[0.9]`} />
-                                            <i onClick={() => { setView(!isView) }} className="fa-regular fa-eye w-10 sm:w-12 aspect-square grid place-items-center rounded-full text-lime-500 text-sm scale-[1] bg-white shadow-md active:scale-[0.9]" />
+                                            <i onClick={() => {
+                                                setView(!isView);
+                                                setProductData(data);
+                                            }} className="fa-regular fa-eye w-10 sm:w-12 aspect-square grid place-items-center rounded-full text-lime-500 text-sm scale-[1] bg-white shadow-md active:scale-[0.9]" />
                                         </div>
                                     </div>
-                                    <div className=' w-full flex flex-col gap-y-10 px-3 sm:flex-row h-full sm:h-auto py-5 sm:py-0 justify-center sm:justify-between items-center sm:items-center p-2'>
-                                        <div>
-                                            <h1 className='font-nike text-sm text-nowrap text-ellipsis overflow-hidden w-[100%] sm:w-[100%] lg:w-auto'>{data.name}</h1>
+                                    <div className=' w-full flex flex-col sm:grid grid-cols-2 gap-y-10 px-3 sm:flex-row h-full sm:h-auto py-5 sm:py-0 justify-center sm:justify-between items-end sm:items-center p-2 sm:-translate-y-8 sm:-mb-8'>
+                                        <div className='flex sm:block flex-col items-end w-[110%] sm:w-auto'>
+                                            <h1 className='font-nike text-sm text-nowrap text-ellipsis overflow-hidden sm:w-auto text-right sm:text-left w-[90%] '>{data.name}</h1>
                                             <div>
                                                 {
                                                     [1, 2, 3, 4, 5].map((star) => {
@@ -95,8 +113,8 @@ const Products = (props) => {
                                                 }
                                             </div>
                                             <div className='flex gap-x-3 font-text font-bold text-[0.6rem]'>
-                                                <span className='font-extrabold'>$ {data.price}</span>
-                                                <span className='text-slate-400 line-through'>$ 25.99</span>
+                                                <span className='font-extrabold'>₹ {data.price}</span>
+                                                <span className='text-slate-400 line-through'>₹ {data.price + 5000}</span>
                                             </div>
                                         </div>
                                         <button className='bg-lime-500 flex justify-center items-center px-5 py-3 gap-x-3 sm:ga-x-1 text-xs rounded-full '>
@@ -121,34 +139,9 @@ const Products = (props) => {
 export default Products
 
 export const ProductDetails = (prop) => {
-    const { isView, setView } = prop;
-    const [viewImage, setImage] = useState("https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3e03a744-1e16-49d7-96dc-946cf0adb129/air-max-sc-shoes-2fm8C6.png");
-    const [data, setData] = useState({
-        id: 1,
-        name: "Nike Air Max SC",
-        type: "Men's Shoes",
-        main_img: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3e03a744-1e16-49d7-96dc-946cf0adb129/air-max-sc-shoes-2fm8C6.png",
-        images: [
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3e03a744-1e16-49d7-96dc-946cf0adb129/air-max-sc-shoes-2fm8C6.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/c5443a03-5a85-4367-956b-dd596720076e/air-max-sc-shoes-2fm8C6.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/fa1f7903-6189-4aad-8771-6d3b723f787f/air-max-sc-shoes-2fm8C6.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f30bbd58-f17e-4fe4-bad5-bdd5b32a0d8d/air-max-sc-shoes-2fm8C6.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2f90571c-7319-40c4-8e21-9378c5e60981/air-max-sc-shoes-2fm8C6.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3c829e4c-678b-476a-93d1-3ab2a75d0e3e/air-max-sc-shoes-2fm8C6.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d6706d71-f28b-49d0-8d6e-b2a34eb5e77a/air-max-sc-shoes-2fm8C6.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e48a5154-9e5c-4655-bb1b-e68625290776/air-max-sc-shoes-2fm8C6.png",
-        ],
-        price: 5995.00,
-        description: "With its easy-going lines, heritage athletics look and, of course, visible Air cushioning, the Nike Air Max SC is the perfect finish to any outfit.",
-        specification: "",
-        delivery_details: "",
-        Reviews: "",
-        color: "Wolf Grey/Burgundy Crush/White/Dark Team Red",
-        style: "CW4555-016"
+    const { isView, setView, data } = prop;
 
-    });
-
-    const [imgIndex, setIndex] = useState(data.images.indexOf("https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3e03a744-1e16-49d7-96dc-946cf0adb129/air-max-sc-shoes-2fm8C6.png"))
+    const [imgIndex, setIndex] = useState(0)
 
     return (
         <div className='top-0 fixed w-full h-screen bg-black/[0.7] z-50 flex justify-center items-center pt-0 overflow-auto'>
@@ -165,7 +158,7 @@ export const ProductDetails = (prop) => {
                             {
                                 data.images.slice(0, 5).map((pic, idx) => {
                                     return (
-                                        <button className={`${imgIndex === idx ? "border-[1.5px] border-lime-500 rounded-md" : ""}`} key={idx} onClick={() => { setImage(pic); setIndex(data.images.indexOf(pic)) }}>
+                                        <button className={`${imgIndex === idx ? "border-[1.5px] border-lime-500 rounded-md" : ""}`} key={idx} onClick={() => { setIndex(data.images.indexOf(pic)) }}>
                                             <img className='w-[full] object-cover aspect-square rounded-md ' src={pic} alt="" />
                                         </button>
                                     )
@@ -175,10 +168,10 @@ export const ProductDetails = (prop) => {
                         <div className="main_img w-[84%] md:[85%] relative flex justify-center items-center">
                             <img className='w-[100%] rounded-md aspect-square object-cover' src={data.images[imgIndex]} alt="" />
                             <div className=' absolute w-full flex justify-between items-center px-3'>
-                                <button onClick={() => { setIndex(imgIndex === 0 ? (data.images.slice(0, 5).length - 1) : (imgIndex - 1)); setImage(data.images[imgIndex]) }}>
+                                <button onClick={() => { setIndex(imgIndex === 0 ? (data.images.slice(0, 5).length - 1) : (imgIndex - 1)); }}>
                                     <i className='fa-solid fa-angle-left px-3 py-3 rounded-sm bg-black/[0.1] text-white' />
                                 </button>
-                                <button onClick={() => { setIndex(imgIndex === data.images.slice(0, 5).length - 1 ? 0 : (imgIndex + 1)); setImage(data.images[imgIndex]) }}>
+                                <button onClick={() => { setIndex(imgIndex === data.images.slice(0, 5).length - 1 ? 0 : (imgIndex + 1));}}>
                                     <i className='fa-solid fa-angle-right px-3 py-3 rounded-sm bg-black/[0.1] text-white' />
                                 </button>
                             </div>

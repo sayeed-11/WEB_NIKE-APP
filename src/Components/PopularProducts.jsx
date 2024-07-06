@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { popular } from '../data/popular'
+// import { popular } from '../data/popular'
+import { JaordanShoes } from '../data/MenShoes/Jordan';
 
 const PopularProducts = (props) => {
     const [favArray, setFavDatainArray] = useState([]);
     const [cartArray, setFavDataincartArray] = useState([]);
-    const {isView, setView} = props;
+    const {isView, setView, setData} = props;
 
     function inArray(needle, haystack) {
         var count = haystack.length;
@@ -38,6 +39,24 @@ const PopularProducts = (props) => {
         }
         return arr;
     }
+    
+    const setProductData = (updatedData) => {
+        setData({
+            id: updatedData.id,
+            name: updatedData.name,
+            type: updatedData.type,
+            main_img: updatedData.img,
+            images: updatedData.colorsAvailable[0].images,
+            price: updatedData.price,
+            description: updatedData.description,
+            specification: "",
+            delivery_details: "",
+            Reviews: "",
+            color : updatedData.colorsAvailable.colorShown,
+            style : updatedData.colorsAvailable.style
+        })
+    }
+
     return (
         <div className='py-5 sm:py-20 flex flex-col sm:flex-row gap-x-1 pl-5 pr-5 sm:pr-0 sm:pl-10'>
 
@@ -63,13 +82,17 @@ const PopularProducts = (props) => {
 
             <div className='flex overflow-x-auto gap-x-4 pl-2 py-2'>
                 {
-                    popular.map((item, index) => {
+                    JaordanShoes.map((item, index) => {
                         return (
                             <div key={item.id} className='min-w-[230px] bg-white  shadow-md rounded-md h-[100%]   transition-all flex flex-col gap-y-2 items-start px-2 py-2 relative hover:scale-[1.03]'>
                                 <div className=' flex items-start z-30 flex-col gap-y-2 absolute right-0 px-2 rounded-ee-lg'>
                                     <i onClick={() => { addFavData(index) }} className={`fa-regular fa-heart  w-9 aspect-square grid place-items-center rounded-md  text-sm scale-[1] ${inArray(index, favArray) ? " bg-lime-500 text-white" : "text-lime-500 bg-white"} shadow-md active:scale-[0.9]`} />
                                     <i onClick={() => { addCartData(index) }} className={`fa-solid fa-cart-shopping w-9 aspect-square grid place-items-center rounded-md text-sm scale-[1] ${inArray(index, cartArray) ? "bg-lime-500 text-white" : "text-lime-500 bg-white"} shadow-md active:scale-[0.9]`} />
-                                    <i onClick={() => { setView(!isView) }} className="fa-regular fa-eye w-9 aspect-square grid place-items-center rounded-md text-lime-500 text-sm scale-[1] bg-white shadow-md active:scale-[0.9]" />
+                                    <i onClick={() => { 
+                                        setView(!isView)
+                                        setProductData(item);
+
+                                     }} className="fa-regular fa-eye w-9 aspect-square grid place-items-center rounded-md text-lime-500 text-sm scale-[1] bg-white shadow-md active:scale-[0.9]" />
                                 </div>
                                 <img className='w-[75%] aspect-[1/1] object-cover rounded-md shadow-md border-b-2 border-lime-500' src={item.img} alt="" />
                                 <div className=' flex flex-col gap-y-1 w-[100%]'>

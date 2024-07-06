@@ -4,8 +4,7 @@ import shoe_logo2 from '../asset/shoes2.png'
 import shoe_logo3 from '../asset/shoes3.png'
 
 
-const HomePage = (props) => {
-    const{isView, setView} = props;
+const HomePage = () => {
     const [defaultImage, setDefault] = useState(shoe_logo2);
     return (
         <div className='w-full lg:min-h-screen h-auto bg-slate-100 flex lg:flex-row flex-col-reverse overflow-x-hidden'>
@@ -25,7 +24,7 @@ const HomePage = (props) => {
                             <i className="fa-solid fa-arrow-right -rotate-45" />
                         </div>
                     </button>
-                    <button onClick={() => {setView(!isView)}} className=' font-text text-white text-xs active:scale-[0.95]'>
+                    <button className=' font-text text-white text-xs active:scale-[0.95]'>
                         <div className='bg-white text-slate-500 px-6 py-3 rounded-3xl space-x-3'>
                             <span>See Details</span>
                             <i className="fa-solid fa-arrow-right" />
