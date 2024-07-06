@@ -71,9 +71,9 @@ const Products = (props) => {
                     {
                         popular.slice(0, 6).map((data, index) => {
                             return (
-                                <div className='bg-gray-100 rounded-md shadow-md overflow-hidden relative flex flex-row h-auto sm:h-auto  sm:flex-col items-center max-w-[90%] sm:max-w-[300px] hover:bg-white hover:scale-[1.02] transition-all scale-[1] sm:scale-[1]'>
+                                <div className='bg-gray-100 rounded-md shadow-md overflow-hidden relative flex flex-row h-auto sm:h-auto  sm:flex-col items-center max-w-[90%] sm:max-w-[300px] hover:bg-white hover:scale-[1.02] transition-all sm:py-5'>
                                     <div className='w-full grid p-5 relative'>
-                                        <img className='-rotate-[30deg] sm:-translate-x-12 translate-x-0 -translate-y-5 sm:-translate-y-12 scale-[1.55] sm:scale-[1.1] w-[100%] rounded-full aspect-square object-cover pointer-events-none' src={data.img} alt="" />
+                                        <img className='-rotate-[30deg] sm:-translate-x-14 translate-x-0 -translate-y-5 sm:-translate-y-14 scale-[1.55] sm:scale-[1.1] w-[100%] rounded-full aspect-square object-cover pointer-events-none' src={data.img} alt="" />
                                         <div className=' flex items-start z-30 flex-col gap-y-1 absolute sm:right-0 sm:top-0 gap-x-2 px-2 py-1 rounded-ee-lg'>
                                             <i onClick={() => { addFavData(index) }} className={`fa-regular fa-heart  w-10 sm:w-12 aspect-square grid place-items-center rounded-full  text-sm scale-[1] ${inArray(index, favArray) ? " bg-lime-500 text-white" : "text-lime-500 bg-white"} shadow-md active:scale-[0.9]`} />
                                             <i onClick={() => { addCartData(index) }} className={`fa-solid fa-cart-shopping w-10 sm:w-12 aspect-square grid place-items-center rounded-full text-sm scale-[1] ${inArray(index, cartArray) ? "bg-lime-500 text-white" : "text-lime-500 bg-white"} shadow-md active:scale-[0.9]`} />
@@ -95,7 +95,7 @@ const Products = (props) => {
                                                 }
                                             </div>
                                             <div className='flex gap-x-3 font-text font-bold text-[0.6rem]'>
-                                                <span className='font-extrabold'>{data.price}</span>
+                                                <span className='font-extrabold'>$ {data.price}</span>
                                                 <span className='text-slate-400 line-through'>$ 25.99</span>
                                             </div>
                                         </div>
@@ -190,8 +190,8 @@ export const ProductDetails = (prop) => {
                             <p className='font-text text-xs md:text-[1rem]'>{data.type}</p>
                         </div>
                         <div className='flex gap-x-3 items-baseline  font-bold mb-2 md:mb-0'>
-                            <p className='font-nike text-xs md:text-[1rem]'>MRP : {data.price}</p>
-                            <p className='font-text text-xs font-bold line-through text-slate-400'>3299</p>
+                            <p className='font-nike text-xs md:text-[1rem]'>MRP : ₹ {data.price}</p>
+                            <p className='font-text text-xs font-bold line-through text-slate-400'>₹ 3299</p>
                         </div>
                         <div>
                             <p className='font-text text-[0.8rem] md:text-xs xl:text-sm'>{data.description}</p>
