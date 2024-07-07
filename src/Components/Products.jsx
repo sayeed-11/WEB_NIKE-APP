@@ -84,11 +84,11 @@ const Products = (props) => {
 
                 <div className='flex flex-wrap justify-center sm:grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 place-items-center gap-x-3 sm:gap-x-5 gap-y-3 sm:gap-y-5'>
                     {
-                        JaordanShoes.slice(0, 9).map((data, index) => {
+                        JaordanShoes.slice(0, JaordanShoes.length).map((data, index) => {
                             return (
                                 <div className='bg-gray-100 rounded-md shadow-md overflow-hidden relative grid grid-cols-2 h-auto sm:flex  sm:flex-col items-center max-w-[90%] sm:max-w-[300px] hover:bg-white hover:scale-[1.02] transition-all sm:py-5'>
                                     <div className='w-full grid p-5 relative'>
-                                        <img className='-rotate-[30deg] sm:-translate-x-16 -translate-x-4 -translate-y-8 sm:-translate-y-14 scale-[1.55] sm:scale-[1.1] w-[100%] rounded-full aspect-square object-cover pointer-events-none' src={data.img} alt="" />
+                                        <img className='-rotate-[30deg] sm:-translate-x-16 -translate-x-4 -translate-y-8 sm:-translate-y-14 scale-[1.55] sm:scale-[1.1] w-[100%] rounded-full aspect-square object-cover pointer-events-none' src={data.colorsAvailable[0].images[0]} alt="" />
                                         <div className=' flex items-start z-30 flex-col gap-y-1 absolute sm:right-0 sm:top-0 gap-x-2 px-2 py-1 rounded-ee-lg'>
                                             <i onClick={() => { addFavData(index) }} className={`fa-regular fa-heart  w-10 sm:w-12 aspect-square grid place-items-center rounded-full  text-sm scale-[1] ${inArray(index, favArray) ? " bg-lime-500 text-white" : "text-lime-500 bg-white"} shadow-md active:scale-[0.9]`} />
                                             <i onClick={() => { addCartData(index) }} className={`fa-solid fa-cart-shopping w-10 sm:w-12 aspect-square grid place-items-center rounded-full text-sm scale-[1] ${inArray(index, cartArray) ? "bg-lime-500 text-white" : "text-lime-500 bg-white"} shadow-md active:scale-[0.9]`} />
@@ -192,7 +192,12 @@ export const ProductDetails = (prop) => {
                             <p className='font-text text-xs font-bold line-through text-slate-400'>₹ 3299</p>
                         </div>
                         <div>
-                            <p className={`font-text text-[0.8rem] md:text-xs xl:text-sm ${!isMore ? "flex" : "block"} items-end sm:block`}><span className={`${isMore ? "line-clamp-none" : "line-clamp-2"} sm:line-clamp-none`}>{data.description}</span><button onClick={() => { setMore(!isMore) }}> <span className='sm:hidden text-xs text-lime-500 font-nike font-semibold'>{isMore ? "Less" : "More"}</span></button></p>
+                            <p className={`font-text text-[0.8rem] md:text-xs xl:text-sm ${!isMore ? "flex" : "block"} items-end sm:block`}>
+                                <span className={`${isMore ? "line-clamp-none" : "line-clamp-2"} sm:line-clamp-none`}>{data.description}</span>
+                                <button onClick={() => { setMore(!isMore) }}>
+                                    <span className='sm:hidden text-xs text-lime-500 font-nike font-semibold'>{isMore ? "Less" : "More"}</span>
+                                </button>
+                            </p>
                         </div>
                         <div className='size&Color flex flex-row justify-between mt-2 md:mt-0'>
                             <div className='size flex flex-col'>
