@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 // import { popular } from '../data/popular'
 import { JaordanShoes } from '../data/MenShoes/Jordan';
+import {shoes} from '../data/MenShoes/Shoes';
 
 const PopularProducts = (props) => {
     const [favArray, setFavDatainArray] = useState([]);
@@ -43,12 +44,12 @@ const PopularProducts = (props) => {
     const setProductData = (updatedData) => {
         setData({
             id: updatedData.id,
-            name: updatedData.name,
+            name: updatedData.colorsAvailable[0].name,
             type: updatedData.type,
             main_img: updatedData.img,
             images: updatedData.colorsAvailable[0].images,
-            price: updatedData.price,
-            description: updatedData.description,
+            price: updatedData.colorsAvailable[0].price,
+            description: updatedData.colorsAvailable[0].description,
             specification: "",
             delivery_details: "",
             Reviews: "",
@@ -82,7 +83,7 @@ const PopularProducts = (props) => {
 
             <div className='flex overflow-x-auto gap-x-4 pl-2 py-2'>
                 {
-                    JaordanShoes.map((item, index) => {
+                    shoes.map((item, index) => {
                         return (
                             <div key={item.id} className='min-w-[230px] bg-white  shadow-md rounded-md h-[100%]   transition-all flex flex-col gap-y-2 items-start px-2 py-2 relative hover:scale-[1.03]'>
                                 <div className=' flex items-start z-30 flex-col gap-y-2 absolute right-0 px-2 rounded-ee-lg'>
@@ -94,13 +95,13 @@ const PopularProducts = (props) => {
 
                                      }} className="fa-regular fa-eye w-9 aspect-square grid place-items-center rounded-md text-lime-500 text-sm scale-[1] bg-white shadow-md active:scale-[0.9]" />
                                 </div>
-                                <img className='w-[75%] aspect-[1/1] object-cover rounded-md shadow-md border-b-2 border-lime-500' src={item.img} alt="" />
+                                <img className='w-[75%] aspect-[1/1] object-cover rounded-md shadow-md border-b-2 border-lime-500' src={item.colorsAvailable[0].images[0]} alt="" />
                                 <div className=' flex flex-col gap-y-1 w-[100%]'>
                                     <div className='w-full'>
-                                        <h1 className='font-nike font text-sm'>{item.name}</h1>
+                                        <h1 className='font-nike font text-sm'>{item.colorsAvailable[0].name}</h1>
                                     </div>
                                     <div className='flex justify-start gap-x-3 items-center '>
-                                        <p className='font-text text-[0.5rem] font-extrabold text-lime-500 pt-1'><span className='text-sm'>$ {item.price}</span> <span className='ml-1 line-through text-slate-700'>$ 25.99</span></p>
+                                        <p className='font-text text-[0.5rem] font-extrabold text-lime-500 pt-1'><span className='text-sm'>₹ {item.colorsAvailable[0].price}</span> <span className='ml-1 line-through text-slate-700'>₹ {item.colorsAvailable[0].price - 2000}</span></p>
                                         <div>
                                             {
                                                 [1, 2, 3, 4, 5].map((star) => {

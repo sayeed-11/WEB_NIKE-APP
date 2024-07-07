@@ -51,17 +51,17 @@ const Products = (props) => {
     const setProductData = (updatedData) => {
         setData({
             id: updatedData.id,
-            name: updatedData.name,
+            name: updatedData.colorsAvailable[0].name,
             type: updatedData.type,
             main_img: updatedData.img,
             images: updatedData.colorsAvailable[0].images,
-            price: updatedData.price,
-            description: updatedData.description,
+            price: updatedData.colorsAvailable[0].price,
+            description: updatedData.colorsAvailable[0].description,
             specification: "",
             delivery_details: "",
             Reviews: "",
-            color : updatedData.colorsAvailable.colorShown,
-            style : updatedData.colorsAvailable.style
+            color: updatedData.colorsAvailable.colorShown,
+            style: updatedData.colorsAvailable.style
         })
     }
 
@@ -100,7 +100,7 @@ const Products = (props) => {
                                     </div>
                                     <div className=' w-full flex flex-col sm:grid grid-cols-2 gap-y-10 px-3 sm:flex-row h-full sm:h-auto py-5 sm:py-0 justify-center sm:justify-between items-end sm:items-center p-2 sm:-translate-y-8 sm:-mb-8'>
                                         <div className='flex sm:block flex-col items-end w-[110%] sm:w-auto'>
-                                            <h1 className='font-nike text-sm text-nowrap text-ellipsis overflow-hidden sm:w-auto text-right sm:text-left w-[90%] '>{data.name}</h1>
+                                            <h1 className='font-nike text-sm text-nowrap text-ellipsis overflow-hidden sm:w-auto text-right sm:text-left w-[90%] '>{data.colorsAvailable[0].name}</h1>
                                             <div>
                                                 {
                                                     [1, 2, 3, 4, 5].map((star) => {
@@ -113,8 +113,8 @@ const Products = (props) => {
                                                 }
                                             </div>
                                             <div className='flex gap-x-3 font-text font-bold text-[0.6rem]'>
-                                                <span className='font-extrabold'>₹ {data.price}</span>
-                                                <span className='text-slate-400 line-through'>₹ {data.price + 5000}</span>
+                                                <span className='font-extrabold'>₹ {data.colorsAvailable[0].price}</span>
+                                                <span className='text-slate-400 line-through'>₹ {data.colorsAvailable[0].price - 5000}</span>
                                             </div>
                                         </div>
                                         <button className='bg-lime-500 flex justify-center items-center px-5 py-3 gap-x-3 sm:ga-x-1 text-xs rounded-full '>
@@ -138,14 +138,19 @@ const Products = (props) => {
 
 export default Products
 
+
+
+
 export const ProductDetails = (prop) => {
     const { isView, setView, data } = prop;
 
     const [imgIndex, setIndex] = useState(0)
 
+    const [isMore, setMore] = useState(false);
+
     return (
         <div className='top-0 fixed w-full h-screen bg-black/[0.7] z-50 flex justify-center items-center pt-0 overflow-auto'>
-            <div className='box w-[90%] md:w-[90%] max-h-[85%] lg:w-[80%] bg-white flex flex-col p-3 gap-y-3 lg:gap-y-5 overflow-auto'>
+            <div className='box w-[90%] md:w-[90%] max-h-[90%] sm:max-h-[85%] lg:w-[80%] bg-white flex flex-col p-3 gap-y-3 lg:gap-y-5 overflow-auto'>
                 <div className='nav w-full h-12 md:h-14 border-b-[2px] border-lime-500 flex justify-between items-start'>
                     <img className='w-16 h-[12]' src={nike_main_logo} alt="" />
                     <button onClick={() => { setView(!isView) }} className='active:scale-[0.97]'>
@@ -171,14 +176,14 @@ export const ProductDetails = (prop) => {
                                 <button onClick={() => { setIndex(imgIndex === 0 ? (data.images.slice(0, 5).length - 1) : (imgIndex - 1)); }}>
                                     <i className='fa-solid fa-angle-left px-3 py-3 rounded-sm bg-black/[0.1] text-white' />
                                 </button>
-                                <button onClick={() => { setIndex(imgIndex === data.images.slice(0, 5).length - 1 ? 0 : (imgIndex + 1));}}>
+                                <button onClick={() => { setIndex(imgIndex === data.images.slice(0, 5).length - 1 ? 0 : (imgIndex + 1)); }}>
                                     <i className='fa-solid fa-angle-right px-3 py-3 rounded-sm bg-black/[0.1] text-white' />
                                 </button>
                             </div>
                         </div>
                     </div>
                     <div className='informations md:px-5 lg:px-10 flex flex-col justify-between'>
-                        <div className='flex justify-between md:block items-center'>
+                        <div className='flex flex-wrap justify-between md:block items-center'>
                             <h1 className='font-nike font-semibold text-xl md:text-3xl'>{data.name}</h1>
                             <p className='font-text text-xs md:text-[1rem]'>{data.type}</p>
                         </div>
@@ -187,7 +192,7 @@ export const ProductDetails = (prop) => {
                             <p className='font-text text-xs font-bold line-through text-slate-400'>₹ 3299</p>
                         </div>
                         <div>
-                            <p className='font-text text-[0.8rem] md:text-xs xl:text-sm'>{data.description}</p>
+                            <p className={`font-text text-[0.8rem] md:text-xs xl:text-sm ${!isMore ? "flex" : "block"} items-end sm:block`}><span className={`${isMore ? "line-clamp-none" : "line-clamp-2"} sm:line-clamp-none`}>{data.description}</span><button onClick={() => { setMore(!isMore) }}> <span className='sm:hidden text-xs text-lime-500'>{isMore ? "Less" : "More"}</span></button></p>
                         </div>
                         <div className='size&Color flex flex-row justify-between mt-2 md:mt-0'>
                             <div className='size flex flex-col'>

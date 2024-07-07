@@ -1,17 +1,15 @@
 export const JaordanShoes = [
     {
         id: 1,
-        name: "Tatum 2 PF",
         type: "Basketball Shoes",
         img: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/6f29432a-e469-47f0-ac54-28cd0e6a7909/tatum-2-pf-basketball-shoes-8fp79D.png",
-        price: 10795.00,
         priceDetails: ["incl. of taxes", "(Also includes all applicable duties)"],
-        description: "It's not over until you hear that buzzer. Fly through your game with energy to spare in the Tatum 2. It helps you stay light on your feet by limiting the use of heavy rubber. A full-length Nike Air Strobel unit helps support your quick shifts, and the frame pairs with supportive foam that moulds to your feet for a contained feel.",
         colorsAvailable: [
             {
                 id: 1,
                 name: "Tatum 2 PF",
                 colorShown: " Blue Void/Leche Blue/Tropical Twist/Bleached Coral",
+                price: 10795.00,
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/6f29432a-e469-47f0-ac54-28cd0e6a7909/tatum-2-pf-basketball-shoes-8fp79D.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/00d827a3-79c3-4497-afd7-3b2f405c5464/tatum-2-pf-basketball-shoes-8fp79D.png",
@@ -49,17 +47,16 @@ export const JaordanShoes = [
     },
     {
         id: 2,
-        name: "Tatum 2 'Sidewalk Chalk' PF",
         type: "Basketball Shoes",
         img: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/fcb3546d-f3aa-4374-8a29-a0af4c21d86b/tatum-2-sidewalk-chalk-pf-basketball-shoes-SjC3nc.png",
-        price: 11495.00,
         priceDetails: ["incl. of taxes", "(Also includes all applicable duties)"],
-        description: "Pastels swirl, bringing to mind the hype of a new game. And the Tatum 2 has court-ready tech to help you with energy return through the 4th and beyond. So get out there, have some fun—and get that W.",
         colorsAvailable: [
             {
                 id: 1,
                 name: "Tatum 2 'Sidewalk Chalk' PF",
                 colorShown: " Light Soft Pink/Smoke/Lilac/Mint Foam",
+                price: 11495.00,
+
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/fcb3546d-f3aa-4374-8a29-a0af4c21d86b/tatum-2-sidewalk-chalk-pf-basketball-shoes-SjC3nc.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/c824c19c-9229-46b2-baed-98ae817f6aed/tatum-2-sidewalk-chalk-pf-basketball-shoes-SjC3nc.png",
@@ -95,17 +92,15 @@ export const JaordanShoes = [
     },
     {
         id: 3,
-        name: "Tatum 2 'Legacy' PF",
         type: "Basketball Shoes",
         img: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/25f80230-e6d5-4c2d-928b-008e2270fdaa/tatum-2-legacy-pf-basketball-shoes-WWbXXK.png",
-        price: 11495.00,
         priceDetails: ["incl. of taxes", "(Also includes all applicable duties)"],
-        description: "You know the legend of Jordan Brand and the lore of Boston. Jayson Tatum takes both legacies into the future with this edition of the Tatum 2, combining the iconic White Cement with hot pops of colour that celebrate his team. So, what's your legacy going to be? Step into the lightweight and flexible build of the Tatum 2 and make it what you want.",
         colorsAvailable: [
             {
                 id: 1,
                 name: "Tatum 2 'Legacy' PF",
                 colorShown: "White/Black/Wolf Grey/Electric Green",
+                price: 11495.00,
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/25f80230-e6d5-4c2d-928b-008e2270fdaa/tatum-2-legacy-pf-basketball-shoes-WWbXXK.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/e94c71b3-4586-48fe-a782-de0722caad17/tatum-2-legacy-pf-basketball-shoes-WWbXXK.png",
@@ -160,17 +155,15 @@ export const JaordanShoes = [
     },
     {
         id: 4,
-        name: "Tatum 2 'Vortex' PF",
         type: "Basketball Shoes",
         img: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/c005f0ca-249c-4fec-b60e-96f98c8b7c61/tatum-2-vortex-pf-basketball-shoes-WWbXXK.png",
-        price: 11495.00,
         priceDetails: ["incl. of taxes", "(Also includes all applicable duties)"],
-        description: "Bright colours and big energy come together in the Tatum 2 'Vortex'. The lightweight, flexible design was created with energy return in mind and this colourway is all about how Jayson helps energise his team. When you're wearing them on the court, your opponents won't be able to ignore all the moves you make—but that doesn't mean they can stop you from scoring.",
         colorsAvailable: [
             {
                 id: 1,
                 name: "Tatum 2 'Vortex' PF",
                 colorShown: "Mint Foam/Black/Hyper Jade/Lava Glow",
+                price: 11495.00,
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/c005f0ca-249c-4fec-b60e-96f98c8b7c61/tatum-2-vortex-pf-basketball-shoes-WWbXXK.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/9d58ab4d-39ac-45ce-bb2d-6b0443ddded0/tatum-2-vortex-pf-basketball-shoes-WWbXXK.png",
@@ -226,17 +219,15 @@ export const JaordanShoes = [
 
     {
         id: 5,
-        name: "Jordan Stay Loyal 3",
         type: "Men's shoes",
         img: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a50b46a9-7d16-4567-aaa0-2ae8397ffb53/jordan-stay-loyal-3-shoes-GNHN2X.png",
-        price: 10295.00,
         priceDetails: ["incl. of taxes", "(Also includes all applicable duties)"],
-        description: "You gotta know where you've been to know where you're going. We took that to heart when creating the Stay Loyal 3, a modern shoe built on the Air Jordan legacy. Inside and out, they're made for versatility, with minimalist looks, cloud-like cushioning and design elements that echo the AJ4. In other words, style with proven lasting power.",
         colorsAvailable: [
             {
                 id: 1,
                 colorShown: " White/Black/Gym Red",
                 name: "Jordan Stay Loyal 3",
+                price: 10295.00,
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a50b46a9-7d16-4567-aaa0-2ae8397ffb53/jordan-stay-loyal-3-shoes-GNHN2X.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a7ee7b05-1493-4271-b9d0-90598c32e5d6/jordan-stay-loyal-3-shoes-GNHN2X.png",
@@ -344,18 +335,16 @@ export const JaordanShoes = [
 
     {
         id: 6,
-        name: "Jordan Stay Loyal 3",
         type: "Men's shoes",
         img: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/d9aeda4d-8928-4495-91bd-bef61255eb8b/jordan-stay-loyal-3-shoes-GNHN2X.png",
-        price: 10295.00,
         priceDetails: ["incl. of taxes", "(Also includes all applicable duties)"],
-        description: "You gotta know where you've been to know where you're going. We took that to heart when creating the Stay Loyal 3, a modern shoe built on the Air Jordan legacy. Inside and out, they're made for versatility, with minimalist looks, cloud-like cushioning and design elements that echo the AJ4. In other words, style with proven lasting power.",
         colorsAvailable: [
 
             {
                 id: 1,
                 colorShown: "White/Wolf Grey/Team Red",
                 name: "Jordan Stay Loyal 3",
+                price: 10295.00,
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/d9aeda4d-8928-4495-91bd-bef61255eb8b/jordan-stay-loyal-3-shoes-GNHN2X.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8d107b8c-e6af-4dfc-9e99-4a7b7c953211/jordan-stay-loyal-3-shoes-GNHN2X.png",
@@ -463,17 +452,15 @@ export const JaordanShoes = [
 
     {
         id: 7,
-        name: "Jordan Stay Loyal 3",
         type: "Men's shoes",
         img: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/be57f4b6-8f6a-4908-8668-cc3f6326be61/jordan-stay-loyal-3-shoes-GNHN2X.png",
-        price: 10295.00,
         priceDetails: ["incl. of taxes", "(Also includes all applicable duties)"],
-        description: "You gotta know where you've been to know where you're going. We took that to heart when creating the Stay Loyal 3, a modern shoe built on the Air Jordan legacy. Inside and out, they're made for versatility, with minimalist looks, cloud-like cushioning and design elements that echo the AJ4. In other words, style with proven lasting power.",
         colorsAvailable: [
             {
                 id: 1,
                 colorShown: "Black/White/University Blue",
                 name: "Jordan Stay Loyal 3",
+                price: 10295.00,
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/be57f4b6-8f6a-4908-8668-cc3f6326be61/jordan-stay-loyal-3-shoes-GNHN2X.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a74483e6-cfcd-451b-a7f1-b89b48c4896f/jordan-stay-loyal-3-shoes-GNHN2X.png",
@@ -580,17 +567,15 @@ export const JaordanShoes = [
 
     {
         id: 8,
-        name: "Jordan Stay Loyal 3",
         type: "Men's shoes",
         img: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/83ace215-0db1-4e1a-849e-b513fbf3a200/jordan-stay-loyal-3-shoes-GNHN2X.png",
-        price: 10295.00,
         priceDetails: ["incl. of taxes", "(Also includes all applicable duties)"],
-        description: "You gotta know where you've been to know where you're going. We took that to heart when creating the Stay Loyal 3, a modern shoe built on the Air Jordan legacy. Inside and out, they're made for versatility, with minimalist looks, cloud-like cushioning and design elements that echo the AJ4. In other words, style with proven lasting power.",
         colorsAvailable: [
             {
                 id: 1,
                 colorShown: "Wolf Grey/White/Cool Grey",
                 name: "Jordan Stay Loyal 3",
+                price: 10295.00,
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/83ace215-0db1-4e1a-849e-b513fbf3a200/jordan-stay-loyal-3-shoes-GNHN2X.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/b5897184-7faa-46b0-86e4-5b87b7e18b4f/jordan-stay-loyal-3-shoes-GNHN2X.png",
@@ -697,17 +682,15 @@ export const JaordanShoes = [
 
     {
         id: 9,
-        name: "Jordan Stay Loyal 3",
         type: "Men's shoes",
         img: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/c4752792-e51c-4299-b8d8-1c2c61d2cf16/jordan-stay-loyal-3-shoes-GNHN2X.png",
-        price: 10295.00,
         priceDetails: ["incl. of taxes", "(Also includes all applicable duties)"],
-        description: "You gotta know where you've been to know where you're going. We took that to heart when creating the Stay Loyal 3, a modern shoe built on the Air Jordan legacy. Inside and out, they're made for versatility, with minimalist looks, cloud-like cushioning and design elements that echo the AJ4. In other words, style with proven lasting power.",
         colorsAvailable: [
             {
                 id: 1,
                 colorShown: "Black/White/Yellow Ochre",
                 name: "Jordan Stay Loyal 3",
+                price: 10295.00,
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/c4752792-e51c-4299-b8d8-1c2c61d2cf16/jordan-stay-loyal-3-shoes-GNHN2X.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/f28fa7b0-bfc0-4a2d-8f3f-61cc4d6434ec/jordan-stay-loyal-3-shoes-GNHN2X.png",
@@ -812,17 +795,15 @@ export const JaordanShoes = [
 
     {
         id: 10,
-        name: "Jumpman MVP",
-        img : "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/432e60d3-724d-4b03-9063-fe712c21704b/jumpman-mvp-shoes-JV1HCs.png",
         type: "Men's Shoes",
-        price: 15295.00,
         priceDetails: ["incl. of taxes", "(Also includes all applicable duties)"],
-        description: "We didn't invent the remix—but considering the material we get to sample, this one's a no-brainer. We took elements from the AJ6, 7 and 8, making them into a completely new shoe that celebrates MJ's first 3-peat championship run. With leather, textile and nubuck details, these sneakers honour one legacy while encouraging you to cement your own.",
+        style: "",
         colorsAvailable: [
             {
                 id: 1,
                 colorShown: " White/Black/Green Glow",
-                name : "Jumpman MVP",
+                name: "Jumpman MVP",
+                price: 15295.00,
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/432e60d3-724d-4b03-9063-fe712c21704b/jumpman-mvp-shoes-JV1HCs.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/60a149ca-6b41-49e7-8bd2-32d9b7db13d8/jumpman-mvp-shoes-JV1HCs.png",
@@ -833,8 +814,8 @@ export const JaordanShoes = [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/035ee68e-4901-4d84-9ab6-f9a8a659e41b/jumpman-mvp-shoes-JV1HCs.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/0b32b483-1c6d-49f9-9154-60ae1774701a/jumpman-mvp-shoes-JV1HCs.png",
                 ],
-                style : "DZ4475-103",
-                description : "We didn't invent the remix—but considering the material we get to sample, this one's a no-brainer. We took elements from the AJ6, 7 and 8, making them into a completely new shoe that celebrates MJ's first 3-peat championship run. With leather, textile and nubuck details, these sneakers honour one legacy while encouraging you to cement your own."
+                style: "DZ4475-103",
+                description: "We didn't invent the remix—but considering the material we get to sample, this one's a no-brainer. We took elements from the AJ6, 7 and 8, making them into a completely new shoe that celebrates MJ's first 3-peat championship run. With leather, textile and nubuck details, these sneakers honour one legacy while encouraging you to cement your own."
             }
         ],
 
@@ -856,6 +837,5 @@ export const JaordanShoes = [
 
 
     },
-
 
 ] 
