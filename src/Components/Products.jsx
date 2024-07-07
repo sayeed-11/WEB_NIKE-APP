@@ -192,7 +192,7 @@ export const ProductDetails = (prop) => {
                             <p className='font-text text-xs font-bold line-through text-slate-400'>₹ 3299</p>
                         </div>
                         <div>
-                            <p className={`font-text text-[0.8rem] md:text-xs xl:text-sm ${!isMore ? "flex" : "block"} items-end sm:block`}><span className={`${isMore ? "line-clamp-none" : "line-clamp-2"} sm:line-clamp-none`}>{data.description}</span><button onClick={() => { setMore(!isMore) }}> <span className='sm:hidden text-xs text-lime-500'>{isMore ? "Less" : "More"}</span></button></p>
+                            <p className={`font-text text-[0.8rem] md:text-xs xl:text-sm ${!isMore ? "flex" : "block"} items-end sm:block`}><span className={`${isMore ? "line-clamp-none" : "line-clamp-2"} sm:line-clamp-none`}>{data.description}</span><button onClick={() => { setMore(!isMore) }}> <span className='sm:hidden text-xs text-lime-500 font-nike font-semibold'>{isMore ? "Less" : "More"}</span></button></p>
                         </div>
                         <div className='size&Color flex flex-row justify-between mt-2 md:mt-0'>
                             <div className='size flex flex-col'>

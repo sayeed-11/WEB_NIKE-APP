@@ -4,7 +4,11 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundColor: {
+        abc : "gray"
+      },
+    },
     fontFamily : {
       abc : ["Roboto", "sans-serif"],
       text : ["Nunito", "sans-serif"],

@@ -33,6 +33,9 @@ export const shoes = [
                 name: "Nike Pegasus 41",
                 price: 13995,
                 images: [
+                    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/0558cdb5-4d42-4f4d-9b37-5038f1f97f9f/pegasus-41-road-running-shoes-RZm89S.png",
+                    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/838b3043-7a43-44d3-9e17-7ee6cf3f19d4/pegasus-41-road-running-shoes-RZm89S.png",
+                    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/40b00a45-2b37-4f55-8d9d-a750c0282389/pegasus-41-road-running-shoes-RZm89S.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/64f0941d-7820-46ae-a77c-d3fa1a5dc42a/pegasus-41-road-running-shoes-RZm89S.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/952a5acc-c358-42e5-90d1-6d3c45d94d42/pegasus-41-road-running-shoes-RZm89S.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/82b72c0c-121e-4330-abfc-bc2b4f375aa4/pegasus-41-road-running-shoes-RZm89S.png",
@@ -41,7 +44,6 @@ export const shoes = [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2d98c7a2-187a-4aa2-90f2-2c034c82bf49/pegasus-41-road-running-shoes-RZm89S.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/73f11d0d-47dc-49a0-9bd7-404692af2c8d/pegasus-41-road-running-shoes-RZm89S.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/58e0d1fd-96fd-43f4-b40e-b7e8cfcf895e/pegasus-41-road-running-shoes-RZm89S.png",
-                    ""
 
                 ],
                 style: " FD2722-103",
@@ -78,6 +80,9 @@ export const shoes = [
                 name: "Nike Pegasus 41",
                 price: 13995,
                 images: [
+                   "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/0558cdb5-4d42-4f4d-9b37-5038f1f97f9f/pegasus-41-road-running-shoes-RZm89S.png",
+                    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/838b3043-7a43-44d3-9e17-7ee6cf3f19d4/pegasus-41-road-running-shoes-RZm89S.png",
+                    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/40b00a45-2b37-4f55-8d9d-a750c0282389/pegasus-41-road-running-shoes-RZm89S.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/64f0941d-7820-46ae-a77c-d3fa1a5dc42a/pegasus-41-road-running-shoes-RZm89S.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/952a5acc-c358-42e5-90d1-6d3c45d94d42/pegasus-41-road-running-shoes-RZm89S.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/82b72c0c-121e-4330-abfc-bc2b4f375aa4/pegasus-41-road-running-shoes-RZm89S.png",
@@ -86,7 +91,7 @@ export const shoes = [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2d98c7a2-187a-4aa2-90f2-2c034c82bf49/pegasus-41-road-running-shoes-RZm89S.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/73f11d0d-47dc-49a0-9bd7-404692af2c8d/pegasus-41-road-running-shoes-RZm89S.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/58e0d1fd-96fd-43f4-b40e-b7e8cfcf895e/pegasus-41-road-running-shoes-RZm89S.png",
-                    ""
+
 
                 ],
                 style: " FD2722-103",

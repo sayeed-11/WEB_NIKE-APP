@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import nike_logo from '../asset/nike_main_logo.png'
+
 
 const NavigationBar = () => {
     const [isBar, setBar] = useState(true);
