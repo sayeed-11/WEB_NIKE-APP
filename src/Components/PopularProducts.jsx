@@ -6,7 +6,7 @@ import {shoes} from '../data/MenShoes/Shoes';
 const PopularProducts = (props) => {
     const [favArray, setFavDatainArray] = useState([]);
     const [cartArray, setFavDataincartArray] = useState([]);
-    const {isView, setView, setData} = props;
+    const { setData} = props;
 
     function inArray(needle, haystack) {
         var count = haystack.length;
@@ -90,7 +90,7 @@ const PopularProducts = (props) => {
                                     <i onClick={() => { addFavData(index) }} className={`fa-regular fa-heart  w-9 aspect-square grid place-items-center rounded-md  text-sm scale-[1] ${inArray(index, favArray) ? " bg-lime-500 text-white" : "text-lime-500 bg-white"} shadow-md active:scale-[0.9]`} />
                                     <i onClick={() => { addCartData(index) }} className={`fa-solid fa-cart-shopping w-9 aspect-square grid place-items-center rounded-md text-sm scale-[1] ${inArray(index, cartArray) ? "bg-lime-500 text-white" : "text-lime-500 bg-white"} shadow-md active:scale-[0.9]`} />
                                     <i onClick={() => { 
-                                        setView(!isView)
+                                        // setView(!isView)
                                         setProductData(item);
 
                                      }} className="fa-regular fa-eye w-9 aspect-square grid place-items-center rounded-md text-lime-500 text-sm scale-[1] bg-white shadow-md active:scale-[0.9]" />

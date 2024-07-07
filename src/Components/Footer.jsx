@@ -1,6 +1,28 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import {
+  view_details,
+  close_details,
+  view_product_details,
+  close_product_details,
+  add_product_in_cart,
+  remove_product_from_cart,
+  add_product_in_wishlist,
+  remove_product_from_wishlist
+} from '../reduxStore/Actions';
 
 const Footer = () => {
+  const dispatch = useDispatch();
+  const {
+    detailsReducer,
+    productDetailsReducer,
+    productInCart,
+    productInWishlist
+  } = useSelector((state) => state)
+  console.log(detailsReducer.isView);
+  console.log(productDetailsReducer.isViewDetails);
+  console.log(productInCart.cartData);
+  console.log(productInWishlist.wishlistData);
   return (
     <div className='w-full bg-white grid grid-cols-1 gap-y-12 px-5 sm:px-10 py-10 font-nike'>
       <div>
@@ -50,6 +72,16 @@ const Footer = () => {
         <div>
           <p className='text-sm text-black/[0.7]'>© 2024 Nike, Inc.All Righrs Reserved</p>
         </div>
+      </div>
+
+      <div className='flex flex-wrap gap-x-20'>
+        <button onClick={() => { dispatch(view_details())}} className='active:text-lime-500'> view data </button>
+        <button onClick={() => { dispatch(close_details())}}> close data </button>
+        <button onClick={() => { dispatch(view_product_details())}}>view product</button>
+        <button onClick={() => { dispatch(close_product_details())}}>close product</button>
+      </div>
+      <div>
+        <p>{detailsReducer.isView ? "true" : "false"}</p>
       </div>
     </div>
   )

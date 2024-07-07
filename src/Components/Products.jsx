@@ -2,16 +2,37 @@ import React, { useState } from 'react'
 // import { popular } from '../data/popular';
 import nike_main_logo from '../asset/nike_main_logo.png'
 import { JaordanShoes } from '../data/MenShoes/Jordan';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+    view_details,
+    close_details,
+    view_product_details,
+    close_product_details,
+    add_product_in_cart,
+    remove_product_from_cart,
+    add_product_in_wishlist,
+    remove_product_from_wishlist
+} from '../reduxStore/Actions';
+
 
 
 const productType = ["All Shoes", "Athletic", "Authentic", "Lather", "Canvas"];
 
 
 const Products = (props) => {
-    const { isView, setView, setData } = props;
+    const { setData } = props;
     const [selected, selection] = useState("All Shoes");
     const [favArray, setFavDatainArray] = useState([]);
     const [cartArray, setFavDataincartArray] = useState([]);
+
+    const {
+        detailsReducer,
+        productDetailsReducer,
+        productInCart,
+        productInWishlist
+    } = useSelector(state => state)
+
+    const dispatch = useDispatch();
 
 
     function inArray(needle, haystack) {
@@ -93,8 +114,9 @@ const Products = (props) => {
                                             <i onClick={() => { addFavData(index) }} className={`fa-regular fa-heart  w-10 sm:w-12 aspect-square grid place-items-center rounded-full  text-sm scale-[1] ${inArray(index, favArray) ? " bg-lime-500 text-white" : "text-lime-500 bg-white"} shadow-md active:scale-[0.9]`} />
                                             <i onClick={() => { addCartData(index) }} className={`fa-solid fa-cart-shopping w-10 sm:w-12 aspect-square grid place-items-center rounded-full text-sm scale-[1] ${inArray(index, cartArray) ? "bg-lime-500 text-white" : "text-lime-500 bg-white"} shadow-md active:scale-[0.9]`} />
                                             <i onClick={() => {
-                                                setView(!isView);
+                                                // setView(!isView);
                                                 setProductData(data);
+                                                dispatch(view_details())
                                             }} className="fa-regular fa-eye w-10 sm:w-12 aspect-square grid place-items-center rounded-full text-lime-500 text-sm scale-[1] bg-white shadow-md active:scale-[0.9]" />
                                         </div>
                                     </div>
@@ -142,18 +164,30 @@ export default Products
 
 
 export const ProductDetails = (prop) => {
-    const { isView, setView, data } = prop;
+    const { data } = prop;
 
     const [imgIndex, setIndex] = useState(0)
 
     const [isMore, setMore] = useState(false);
+
+    const {
+        detailsReducer,
+        productDetailsReducer,
+        productInCart,
+        productInWishlist
+    } = useSelector(state => state)
+
+    const dispatch = useDispatch();
 
     return (
         <div className='top-0 fixed w-full h-screen bg-black/[0.7] z-50 flex justify-center items-center pt-0 overflow-auto'>
             <div className='box w-[90%] md:w-[90%] max-h-[90%] sm:max-h-[85%] lg:w-[80%] bg-white flex flex-col p-3 gap-y-3 lg:gap-y-5 overflow-auto'>
                 <div className='nav w-full h-12 md:h-14 border-b-[2px] border-lime-500 flex justify-between items-start'>
                     <img className='w-16 h-[12]' src={nike_main_logo} alt="" />
-                    <button onClick={() => { setView(!isView) }} className='active:scale-[0.97]'>
+                    <button onClick={() => { 
+                        // setView(!isView)
+                        dispatch(close_details())
+                     }} className='active:scale-[0.97]'>
                         <i className="fa-solid fa-xmark bg-lime-500 px-3 md:py-2 py-1 text-white rounded-sm text-xl" />
                     </button>
                 </div>
