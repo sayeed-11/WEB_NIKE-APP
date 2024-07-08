@@ -6,7 +6,8 @@ import {
     ADD_PRODUCT_IN_CART,
     REMOVE_PRODUCT_FROM_CART,
     ADD_PRODUCT_IN_WISHLIST,
-    REMOVE_PRODUCT_FROM_WISHLIST
+    REMOVE_PRODUCT_FROM_WISHLIST,
+    SET_DATA
 } from "./TypesOfActions";
 
 
@@ -74,6 +75,15 @@ export const remove_product_from_wishlist = (id) => {
         {
             type : REMOVE_PRODUCT_FROM_WISHLIST,
             payload : id
+        }
+    )
+}
+
+export const set_data = (data) => {
+    return(
+        {
+            type : SET_DATA,
+            payload : data
         }
     )
 }

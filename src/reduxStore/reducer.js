@@ -6,7 +6,8 @@ import {
     ADD_PRODUCT_IN_CART,
     REMOVE_PRODUCT_FROM_CART,
     ADD_PRODUCT_IN_WISHLIST,
-    REMOVE_PRODUCT_FROM_WISHLIST
+    REMOVE_PRODUCT_FROM_WISHLIST,
+    SET_DATA
 } from "./TypesOfActions";
 
 
@@ -57,13 +58,14 @@ export const productInCart = (state = initialCart, action) => {
     switch(action.type){
         case ADD_PRODUCT_IN_CART :
             return({
-                cartData : [...state,action.payload]
+                cartData : [...state.cartData,action.payload]
             })
         case REMOVE_PRODUCT_FROM_CART :
+            const remainData = state.cartData.filter((value) => {
+                return value.id !== action.payload
+            })
             return({
-                cartData : state.filter((value) => {
-                    return value.id !== action.payload
-                })
+                cartData : remainData
             })
         default : return state
     }
@@ -78,14 +80,33 @@ export const productInWishlist = (state = initialWishlist, action) => {
     switch(action.type){
         case ADD_PRODUCT_IN_WISHLIST :
             return({
-                wishlistData : [...state,action.payload]
+                wishlistData : [...state.wishlistData,action.payload]
             })
         case REMOVE_PRODUCT_FROM_WISHLIST :
+            const remainData = state.wishlistData.filter((value) => {
+                return value.id !== action.payload
+            })
             return({
-                wishlistData : state.filter((value) => {
-                    return value.id !== action.payload
-                })
+                wishlistData : remainData
             })
         default : return state  
+    }
+}
+
+
+
+//SET_DATA
+const setInitialData = {
+    productDetails : {}
+}
+export const setData = (state = setInitialData , action) => {
+    switch(action.type){
+        case SET_DATA :
+            return(
+                {
+                    productDetails : action.payload
+                }
+            )
+        default : return state
     }
 }

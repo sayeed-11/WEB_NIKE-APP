@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
-// import { popular } from '../data/popular'
-import { JaordanShoes } from '../data/MenShoes/Jordan';
 import {shoes} from '../data/MenShoes/Shoes';
+import { useDispatch } from 'react-redux';
+import { set_data, view_details } from '../reduxStore/Actions';
 
-const PopularProducts = (props) => {
+const PopularProducts = () => {
     const [favArray, setFavDatainArray] = useState([]);
     const [cartArray, setFavDataincartArray] = useState([]);
-    const { setData} = props;
+
+    const dispatch = useDispatch();
 
     function inArray(needle, haystack) {
         var count = haystack.length;
@@ -41,22 +42,6 @@ const PopularProducts = (props) => {
         return arr;
     }
     
-    const setProductData = (updatedData) => {
-        setData({
-            id: updatedData.id,
-            name: updatedData.colorsAvailable[0].name,
-            type: updatedData.type,
-            main_img: updatedData.img,
-            images: updatedData.colorsAvailable[0].images,
-            price: updatedData.colorsAvailable[0].price,
-            description: updatedData.colorsAvailable[0].description,
-            specification: "",
-            delivery_details: "",
-            Reviews: "",
-            color : updatedData.colorsAvailable.colorShown,
-            style : updatedData.colorsAvailable.style
-        })
-    }
 
     return (
         <div className='py-5 sm:py-20 flex flex-col sm:flex-row gap-x-1 pl-5 pr-5 sm:pr-0 sm:pl-10'>
@@ -90,9 +75,8 @@ const PopularProducts = (props) => {
                                     <i onClick={() => { addFavData(index) }} className={`fa-regular fa-heart  w-9 aspect-square grid place-items-center rounded-md  text-sm scale-[1] ${inArray(index, favArray) ? " bg-lime-500 text-white" : "text-lime-500 bg-white"} shadow-md active:scale-[0.9]`} />
                                     <i onClick={() => { addCartData(index) }} className={`fa-solid fa-cart-shopping w-9 aspect-square grid place-items-center rounded-md text-sm scale-[1] ${inArray(index, cartArray) ? "bg-lime-500 text-white" : "text-lime-500 bg-white"} shadow-md active:scale-[0.9]`} />
                                     <i onClick={() => { 
-                                        // setView(!isView)
-                                        setProductData(item);
-
+                                        dispatch(view_details())
+                                        dispatch(set_data(item))
                                      }} className="fa-regular fa-eye w-9 aspect-square grid place-items-center rounded-md text-lime-500 text-sm scale-[1] bg-white shadow-md active:scale-[0.9]" />
                                 </div>
                                 <img className='w-[75%] aspect-[1/1] object-cover rounded-md shadow-md border-b-2 border-lime-500' src={item.colorsAvailable[0].images[0]} alt="" />

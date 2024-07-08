@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import NavigationBar from "./Components/NavigationBar";
 import HomePage from './Components/HomePage';
 import PopularProducts from "./Components/PopularProducts";
@@ -8,51 +8,30 @@ import Description from "./Components/Description";
 import Feedback from "./Components/Feedback";
 import Discount from "./Components/Discount";
 import Footer from "./Components/Footer";
-import { ProductDetails } from "./Components/Products";
 import { useSelector } from "react-redux";
+import ProductDetails from "./Components/ShortDetails";
 
 function App() {
-  // const [isView, setView] = useState(false);
-
-  const [data, setData] = useState({
-
-  });
 
 
   const {
     detailsReducer,
-    productDetailsReducer,
-    productInCart,
-    productInWishlist
   } = useSelector(state => state)
 
-  console.log('app page', detailsReducer.isView);
 
 
   return (
     <div className={`App  w-full min-h-screen bg-slate-100 relative flex flex-col justify-center`}>
       <NavigationBar />
       <HomePage />
-      <PopularProducts
-        // isView={isView}
-        // setView={setView}
-        setData={setData}
-      />
+      <PopularProducts/>
       <AboutPage />
-      <Products
-        // isView={isView}
-        // setView={setView}
-        setData={setData}
-      />
+      <Products/>
       <Description />
       <Feedback />
       <Discount />
       <Footer />
-      {detailsReducer.isView && <ProductDetails
-        // isView={isView}
-        // setView={setView}
-        data={data}
-      />}
+      {detailsReducer.isView && <ProductDetails/>}
     </div>
   );
 }

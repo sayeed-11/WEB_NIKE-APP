@@ -4,14 +4,16 @@ import {
     detailsReducer,
     productDetailsReducer,
     productInCart,
-    productInWishlist
+    productInWishlist,
+    setData
  } from './reducer'
 
 const rootReducer = combineReducers({
     detailsReducer : detailsReducer,
     productDetailsReducer : productDetailsReducer,
     productInCart : productInCart,
-    productInWishlist : productInWishlist
+    productInWishlist : productInWishlist,
+    setData : setData
 })
 
 export const store = createStore(rootReducer);
