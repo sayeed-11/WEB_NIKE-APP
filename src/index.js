@@ -5,6 +5,8 @@ import './index.css';
 import App from './App';
 import { Provider } from 'react-redux';
 import { store } from './reduxStore/store';
+import CartList from './Components/Cart/CartList';
+import WishList from './Components/Wishlist/WishList';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,6 +14,8 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/CartList" element={<CartList />} />
+        <Route path="/WishList" element={<WishList />} />
       </Routes>
     </BrowserRouter>
   </Provider>

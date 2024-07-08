@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 import { JaordanShoes } from '../data/MenShoes/Jordan';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
     view_details,
     set_data,
     add_product_in_cart,
-    add_product_in_wishlist
+    add_product_in_wishlist,
+    remove_product_from_cart,
+    remove_product_from_wishlist,
+    add_data_in_cart_array,
+    remove_data_from_cart_array,
+    add_data_in_wishlist_array,
+    remove_data_from_wishlist_array
 } from '../reduxStore/Actions';
 
 
@@ -15,12 +21,11 @@ const productType = ["All Shoes", "Athletic", "Authentic", "Lather", "Canvas"];
 
 const Products = () => {
     const [selected, selection] = useState("All Shoes");
-    const [favArray, setFavDatainArray] = useState([]);
-    const [cartArray, setFavDataincartArray] = useState([]);
-
 
     const dispatch = useDispatch();
 
+    const { cartArray } = useSelector(state => state.cartDataReducer)
+    const { wishlistArray } = useSelector(state => state.wishlistDataReducer)
 
     function inArray(needle, haystack) {
         var count = haystack.length;
@@ -30,30 +35,32 @@ const Products = () => {
         return false;
     }
 
-    const addFavData = (index) => {
-        if (!favArray.includes(index)) {
-            setFavDatainArray([...favArray, index])
-        } else {
-            removeItemOnce(favArray, index);
-            setFavDatainArray([...favArray]);
-        }
-    }
-    const addCartData = (index) => {
-        if (!cartArray.includes(index)) {
-            setFavDataincartArray([...cartArray, index]);
-        } else {
-            removeItemOnce(cartArray, index);
-            setFavDataincartArray([...cartArray]);
-        }
-    }
+    const [len, setLen] = useState(6)
 
-    function removeItemOnce(arr, value) {
-        var index = arr.indexOf(value);
-        if (index > -1) {
-            arr.splice(index, 1);
-        }
-        return arr;
-    }
+    // const addFavData = (index) => {
+    //     if (!favArray.includes(index)) {
+    //         setFavDatainArray([...favArray, index])
+    //     } else {
+    //         removeItemOnce(favArray, index);
+    //         setFavDatainArray([...favArray]);
+    //     }
+    // }
+    // const addCartData = (index) => {
+    //     if (!cartArray.includes(index)) {
+    //         setFavDataincartArray([...cartArray, index]);
+    //     } else {
+    //         removeItemOnce(cartArray, index);
+    //         setFavDataincartArray([...cartArray]);
+    //     }
+    // }
+
+    // function removeItemOnce(arr, value) {
+    //     var index = arr.indexOf(value);
+    //     if (index > -1) {
+    //         arr.splice(index, 1);
+    //     }
+    //     return arr;
+    // }
 
     return (
         <div className='relative bg-slate-100 py-10 sm:py-20 px-0 '>
@@ -74,20 +81,24 @@ const Products = () => {
 
                 <div className='flex flex-wrap justify-center sm:grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 place-items-center gap-x-3 sm:gap-x-5 gap-y-3 sm:gap-y-5'>
                     {
-                        JaordanShoes.slice(0, JaordanShoes.length).map((data, index) => {
+                        JaordanShoes.slice(0, len).map((item, index) => {
+                                const data = {
+                                    ...item,
+                                    id : item.colorsAvailable[0].style
+                                }
                             return (
                                 <div className='bg-gray-100 rounded-md shadow-md overflow-hidden relative grid grid-cols-2 h-auto sm:flex  sm:flex-col items-center max-w-[90%] sm:max-w-[300px] hover:bg-white hover:scale-[1.02] transition-all sm:py-5'>
                                     <div className='w-full grid p-5 relative'>
                                         <img className='-rotate-[30deg] sm:-translate-x-16 -translate-x-4 -translate-y-8 sm:-translate-y-14 scale-[1.55] sm:scale-[1.1] w-[100%] rounded-full aspect-square object-cover pointer-events-none' src={data.colorsAvailable[0].images[0]} alt="" />
                                         <div className=' flex items-start z-30 flex-col gap-y-1 absolute sm:right-0 sm:top-0 gap-x-2 px-2 py-1 rounded-ee-lg'>
                                             <i onClick={() => {
-                                                addFavData(index);
-                                                dispatch(add_product_in_wishlist(data))
-                                            }} className={`fa-regular fa-heart  w-10 sm:w-12 aspect-square grid place-items-center rounded-full  text-sm scale-[1] ${inArray(index, favArray) ? " bg-lime-500 text-white" : "text-lime-500 bg-white"} shadow-md active:scale-[0.9]`} />
+                                                inArray(data.id, wishlistArray) ? dispatch(remove_product_from_wishlist(data.id)) : dispatch(add_product_in_wishlist(data))
+                                                inArray(data.id, wishlistArray) ? dispatch(remove_data_from_wishlist_array(data.id)) : dispatch(add_data_in_wishlist_array(data.id))
+                                            }} className={`fa-regular fa-heart  w-10 sm:w-12 aspect-square grid place-items-center rounded-full  text-sm scale-[1] ${inArray(data.id, wishlistArray) ? " bg-lime-500 text-white" : "text-lime-500 bg-white"} shadow-md active:scale-[0.9]`} />
                                             <i onClick={() => {
-                                                addCartData(index);
-                                                dispatch(add_product_in_cart(data))
-                                            }} className={`fa-solid fa-cart-shopping w-10 sm:w-12 aspect-square grid place-items-center rounded-full text-sm scale-[1] ${inArray(index, cartArray) ? "bg-lime-500 text-white" : "text-lime-500 bg-white"} shadow-md active:scale-[0.9]`} />
+                                                inArray(data.id, cartArray) ? dispatch(remove_product_from_cart(data.id)) : dispatch(add_product_in_cart(data))
+                                                inArray(data.id, cartArray) ? dispatch(remove_data_from_cart_array(data.id)) : dispatch(add_data_in_cart_array(data.id))
+                                            }} className={`fa-solid fa-cart-shopping w-10 sm:w-12 aspect-square grid place-items-center rounded-full text-sm scale-[1] ${inArray(data.id, cartArray) ? "bg-lime-500 text-white" : "text-lime-500 bg-white"} shadow-md active:scale-[0.9]`} />
                                             <i onClick={() => {
                                                 dispatch(view_details());
                                                 dispatch(set_data(data));
@@ -123,7 +134,7 @@ const Products = () => {
                         })
                     }
                 </div>
-                <button className='mt-5'>
+                <button onClick={() => setLen(15)} className='mt-5'>
                     <span className=' bg-lime-500 text-white px-10 py-4 text-xs rounded-full'>View All Products</span>
                 </button>
             </div>

@@ -14,13 +14,13 @@ const ProductDetails = () => {
 
     const {
         setData,
-        productInCart,
-        productInWishlist,
+        // productInCart,
+        // productInWishlist,
     } = useSelector(state => state)
     const details = setData.productDetails;
 
-    console.log('productInCart', productInCart);
-    console.log('productInCart', productInWishlist);
+    // console.log('productInCart', productInCart);
+    // console.log('productInCart', productInWishlist);
 
     return (
         <div className='top-0 fixed w-full h-screen bg-black/[0.7] z-50 flex justify-center items-center pt-0 overflow-auto'>

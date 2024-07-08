@@ -7,7 +7,11 @@ import {
     REMOVE_PRODUCT_FROM_CART,
     ADD_PRODUCT_IN_WISHLIST,
     REMOVE_PRODUCT_FROM_WISHLIST,
-    SET_DATA
+    SET_DATA,
+    ADD_DATA_IN_CART_ARRAY,
+    REMOVE_DATA_FROM_CART_ARRAY,
+    ADD_DATA_IN_WISHLIST_ARRAY,
+    REMOVE_DATA_FROM_WISHLIST_ARRAY
 } from "./TypesOfActions";
 
 
@@ -84,6 +88,42 @@ export const set_data = (data) => {
         {
             type : SET_DATA,
             payload : data
+        }
+    )
+}
+
+export const add_data_in_cart_array = (id) => {
+    return(
+        {
+            type : ADD_DATA_IN_CART_ARRAY,
+            payload : id
+        }
+    )
+}
+
+export const remove_data_from_cart_array = (id) => {
+    return(
+        {
+            type : REMOVE_DATA_FROM_CART_ARRAY,
+            payload : id
+        }
+    )
+}
+
+export const add_data_in_wishlist_array = (id) => {
+    return(
+        {
+            type : ADD_DATA_IN_WISHLIST_ARRAY,
+            payload : id
+        }
+    )
+}
+
+export const remove_data_from_wishlist_array = (id) => {
+    return(
+        {
+            type : REMOVE_DATA_FROM_WISHLIST_ARRAY,
+            payload : id
         }
     )
 }

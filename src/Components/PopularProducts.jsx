@@ -1,13 +1,24 @@
-import React, { useState } from 'react'
-import {shoes} from '../data/MenShoes/Shoes';
-import { useDispatch } from 'react-redux';
-import { set_data, view_details } from '../reduxStore/Actions';
+import React from 'react'
+import { shoes } from '../data/MenShoes/Shoes';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+    view_details,
+    set_data,
+    add_product_in_cart,
+    add_product_in_wishlist,
+    remove_product_from_cart,
+    remove_product_from_wishlist,
+    add_data_in_cart_array,
+    remove_data_from_cart_array,
+    add_data_in_wishlist_array,
+    remove_data_from_wishlist_array
+} from '../reduxStore/Actions';
 
 const PopularProducts = () => {
-    const [favArray, setFavDatainArray] = useState([]);
-    const [cartArray, setFavDataincartArray] = useState([]);
-
     const dispatch = useDispatch();
+
+    const { cartArray } = useSelector(state => state.cartDataReducer)
+    const { wishlistArray } = useSelector(state => state.wishlistDataReducer)
 
     function inArray(needle, haystack) {
         var count = haystack.length;
@@ -17,31 +28,6 @@ const PopularProducts = () => {
         return false;
     }
 
-    const addFavData = (index) => {
-        if (!favArray.includes(index)) {
-            setFavDatainArray([...favArray, index])
-        } else {
-            removeItemOnce(favArray, index);
-            setFavDatainArray([...favArray]);
-        }
-    }
-    const addCartData = (index) => {
-        if (!cartArray.includes(index)) {
-            setFavDataincartArray([...cartArray, index]);
-        } else {
-            removeItemOnce(cartArray, index);
-            setFavDataincartArray([...cartArray]);
-        }
-    }
-
-    function removeItemOnce(arr, value) {
-        var index = arr.indexOf(value);
-        if (index > -1) {
-            arr.splice(index, 1);
-        }
-        return arr;
-    }
-    
 
     return (
         <div className='py-5 sm:py-20 flex flex-col sm:flex-row gap-x-1 pl-5 pr-5 sm:pr-0 sm:pl-10'>
@@ -72,12 +58,18 @@ const PopularProducts = () => {
                         return (
                             <div key={item.id} className='min-w-[230px] bg-white  shadow-md rounded-md h-[100%]   transition-all flex flex-col gap-y-2 items-start px-2 py-2 relative hover:scale-[1.03]'>
                                 <div className=' flex items-start z-30 flex-col gap-y-2 absolute right-0 px-2 rounded-ee-lg'>
-                                    <i onClick={() => { addFavData(index) }} className={`fa-regular fa-heart  w-9 aspect-square grid place-items-center rounded-md  text-sm scale-[1] ${inArray(index, favArray) ? " bg-lime-500 text-white" : "text-lime-500 bg-white"} shadow-md active:scale-[0.9]`} />
-                                    <i onClick={() => { addCartData(index) }} className={`fa-solid fa-cart-shopping w-9 aspect-square grid place-items-center rounded-md text-sm scale-[1] ${inArray(index, cartArray) ? "bg-lime-500 text-white" : "text-lime-500 bg-white"} shadow-md active:scale-[0.9]`} />
-                                    <i onClick={() => { 
+                                    <i onClick={() => {
+                                        inArray(item.id, wishlistArray) ? dispatch(remove_product_from_wishlist(item.id)) : dispatch(add_product_in_wishlist(item))
+                                        inArray(item.id, wishlistArray) ? dispatch(remove_data_from_wishlist_array(item.id)) : dispatch(add_data_in_wishlist_array(item.id))
+                                    }} className={`fa-regular fa-heart  w-9 aspect-square grid place-items-center rounded-md  text-sm scale-[1] ${inArray(item.id, wishlistArray) ? " bg-lime-500 text-white" : "text-lime-500 bg-white"} shadow-md active:scale-[0.9]`} />
+                                    <i onClick={() => {
+                                        inArray(item.id, cartArray) ? dispatch(remove_product_from_cart(item.id)) : dispatch(add_product_in_cart(item))
+                                        inArray(item.id, cartArray) ? dispatch(remove_data_from_cart_array(item.id)) : dispatch(add_data_in_cart_array(item.id))
+                                    }} className={`fa-solid fa-cart-shopping w-9 aspect-square grid place-items-center rounded-md text-sm scale-[1] ${inArray(item.id, cartArray) ? "bg-lime-500 text-white" : "text-lime-500 bg-white"} shadow-md active:scale-[0.9]`} />
+                                    <i onClick={() => {
                                         dispatch(view_details())
                                         dispatch(set_data(item))
-                                     }} className="fa-regular fa-eye w-9 aspect-square grid place-items-center rounded-md text-lime-500 text-sm scale-[1] bg-white shadow-md active:scale-[0.9]" />
+                                    }} className="fa-regular fa-eye w-9 aspect-square grid place-items-center rounded-md text-lime-500 text-sm scale-[1] bg-white shadow-md active:scale-[0.9]" />
                                 </div>
                                 <img className='w-[75%] aspect-[1/1] object-cover rounded-md shadow-md border-b-2 border-lime-500' src={item.colorsAvailable[0].images[0]} alt="" />
                                 <div className=' flex flex-col gap-y-1 w-[100%]'>

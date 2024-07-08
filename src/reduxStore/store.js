@@ -5,7 +5,9 @@ import {
     productDetailsReducer,
     productInCart,
     productInWishlist,
-    setData
+    setData,
+    cartDataReducer,
+    wishlistDataReducer
  } from './reducer'
 
 const rootReducer = combineReducers({
@@ -13,9 +15,11 @@ const rootReducer = combineReducers({
     productDetailsReducer : productDetailsReducer,
     productInCart : productInCart,
     productInWishlist : productInWishlist,
-    setData : setData
+    setData : setData,
+    cartDataReducer : cartDataReducer,
+    wishlistDataReducer : wishlistDataReducer
 })
 
 export const store = createStore(rootReducer);
 
-store.subscribe(() => {console.log('updated data',detailsReducer.isView )})
+// store.subscribe(() => {console.log('updated data',store.getState().productInCart.cartData )})

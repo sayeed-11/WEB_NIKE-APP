@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 
 const NavigationBar = () => {
@@ -6,6 +7,9 @@ const NavigationBar = () => {
     const [hasSearch, setSearchDecision] = useState(false);
     const [value, setValue] = useState("");
     const [height, setHeight] = useState(false)
+    const navigate = useNavigate()
+    const { pathname } = useLocation();
+
     return (
         <nav className=' flex justify-between sm:grid grid-cols-2 md:grid-cols-3 fixed top-0 max-w-[1350px] w-full backdrop-blur-lg z-50'>
 
@@ -23,7 +27,7 @@ const NavigationBar = () => {
                 <ul className='flex flex-col md:flex-row  md:justify-around gap-y-5 h-full font-nike md:font-text md:font-bold w-[70%] md:w-auto ml-auto md:ml-0 bg-black md:bg-transparent pt-20 md:pt-0 pl-10 md:pl-0'>
                     <li className='flex items-baseline md:items-center gap-x-1 text-xl md:text-sm'>
                         <i className="fa-solid fa-house md:hidden text-[2rem] w-[50px] border-r-2 border-white mr-2" />
-                        <a href="#">Home</a>
+                        <a href="/#">Home</a>
                         <i className="fa-solid fa-angle-right md:rotate-90 text-xs" />
                     </li>
                     <li
@@ -38,18 +42,17 @@ const NavigationBar = () => {
                         onM
                         className={`flex  items-baseline md:items-center gap-x-1 text-xl md:text-sm relative`}>
                         <i className="fa-brands fa-shopify md:hidden text-[2rem] w-[50px] border-r-2 border-white mr-2" />
-                        <a href="#">Shop</a>
+                        <a href="/#">Shop</a>
                         <i className="fa-solid fa-angle-right md:rotate-90 text-xs" />
-                        {/* <div className='absolute w-screen -translate-x-[44%] h-40 bg-green-400'/> */}
                     </li>
                     <li className='flex  items-baseline md:items-center gap-x-1 text-xl md:text-sm'>
                         <i className="fa-solid fa-blog md:hidden text-[2rem] w-[50px] border-r-2 border-white mr-2" />
-                        <a href="#">Blogs</a>
+                        <a href="/#">Blogs</a>
                         <i className="fa-solid fa-angle-right md:rotate-90 text-xs" />
                     </li>
                     <li className='flex  items-baseline md:items-center gap-x-1 text-xl md:text-sm'>
                         <i className="fa-solid fa-file md:hidden text-[2rem] w-[50px] border-r-2 border-white mr-2" />
-                        <a href="#">Pages</a>
+                        <a href="/#">Pages</a>
                         <i className="fa-solid fa-angle-right md:rotate-90 text-xs" />
                     </li>
                 </ul>
@@ -65,15 +68,14 @@ const NavigationBar = () => {
                         <i onClick={() => { setSearchDecision(!hasSearch) }} className="fa-solid fa-xmark bg-white/[0.2] px-3.5 py-3 rounded-full" />
                     }
                 </button>
-                <button><i className="fa-solid fa-bag-shopping bg-white/[0.2] p-3 rounded-full" /></button>
+                <button onClick={() => {
+                    const path = 'CartList'
+                    pathname === '/' ? navigate(path) : console.log(window.location.hostname);;
+                }}>
+                    <i className="fa-solid fa-bag-shopping bg-white/[0.2] p-3 rounded-full" />
+                </button>
                 <button><i className="fa-solid fa-user bg-white/[0.2] p-3 rounded-full" /></button>
                 <button onClick={() => { setBar(!isBar) }}><i className="fa-solid fa-bars bg-lime-500 p-3 rounded-md md:hidden" /></button>
-                {/* <button className='flex flex-col justify-center items-center gap-y-1 bg-red-500 px-5'>
-                    <div className='w-5 h-[1.6px] bg-white' />
-                    <div className='w-3 h-[1.6px] bg-white' />
-                    <div className='w-1 h-[1.6px] bg-white' />
-
-                </button> */}
             </div>
         </nav>
     )
