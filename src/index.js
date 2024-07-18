@@ -7,6 +7,9 @@ import { Provider } from 'react-redux';
 import { store } from './reduxStore/store';
 import CartList from './Components/Cart/CartList';
 import WishList from './Components/Wishlist/WishList';
+import MyAccount from './Components/MyAccount/MyAccount';
+// import NavigationBar from './Components/NavigationBar';
+import Favourites from './Components/MyAccount/Favourites';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,7 +18,10 @@ root.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/CartList" element={<CartList />} />
+        <Route path="MyAccount/CartList" element={<CartList />} />
         <Route path="/WishList" element={<WishList />} />
+        <Route path="/MyAccount" element={<MyAccount />} />
+        <Route path="/Favourites" element={<Favourites />} />
       </Routes>
     </BrowserRouter>
   </Provider>

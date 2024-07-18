@@ -94,7 +94,7 @@ const Products = () => {
                                             <i onClick={() => {
                                                 inArray(data.id, wishlistArray) ? dispatch(remove_product_from_wishlist(data.id)) : dispatch(add_product_in_wishlist(data))
                                                 inArray(data.id, wishlistArray) ? dispatch(remove_data_from_wishlist_array(data.id)) : dispatch(add_data_in_wishlist_array(data.id))
-                                            }} className={`fa-regular fa-heart  w-10 sm:w-12 aspect-square grid place-items-center rounded-full  text-sm scale-[1] ${inArray(data.id, wishlistArray) ? " bg-lime-500 text-white" : "text-lime-500 bg-white"} shadow-md active:scale-[0.9]`} />
+                                            }} className={`fa-${inArray(data.id, wishlistArray) ? "solid" : "regular"} fa-heart  w-10 sm:w-12 aspect-square grid place-items-center rounded-full  text-sm scale-[1] ${inArray(data.id, wishlistArray) ? " bg-lime-500 text-white" : "text-lime-500 bg-white"} shadow-md active:scale-[0.9]`} />
                                             <i onClick={() => {
                                                 inArray(data.id, cartArray) ? dispatch(remove_product_from_cart(data.id)) : dispatch(add_product_in_cart(data))
                                                 inArray(data.id, cartArray) ? dispatch(remove_data_from_cart_array(data.id)) : dispatch(add_data_in_cart_array(data.id))
@@ -134,7 +134,7 @@ const Products = () => {
                         })
                     }
                 </div>
-                <button onClick={() => setLen(15)} className='mt-5'>
+                <button onClick={() => setLen(JaordanShoes.length)} className='mt-5'>
                     <span className=' bg-lime-500 text-white px-10 py-4 text-xs rounded-full'>View All Products</span>
                 </button>
             </div>

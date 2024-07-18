@@ -54,14 +54,18 @@ const PopularProducts = () => {
 
             <div className='flex overflow-x-auto gap-x-4 pl-2 py-2'>
                 {
-                    shoes.map((item, index) => {
+                    shoes.map((data, index) => {
+                        const item = {
+                            ...data,
+                            id : data.colorsAvailable[0].style
+                        }
                         return (
                             <div key={item.id} className='min-w-[230px] bg-white  shadow-md rounded-md h-[100%]   transition-all flex flex-col gap-y-2 items-start px-2 py-2 relative hover:scale-[1.03]'>
                                 <div className=' flex items-start z-30 flex-col gap-y-2 absolute right-0 px-2 rounded-ee-lg'>
                                     <i onClick={() => {
                                         inArray(item.id, wishlistArray) ? dispatch(remove_product_from_wishlist(item.id)) : dispatch(add_product_in_wishlist(item))
                                         inArray(item.id, wishlistArray) ? dispatch(remove_data_from_wishlist_array(item.id)) : dispatch(add_data_in_wishlist_array(item.id))
-                                    }} className={`fa-regular fa-heart  w-9 aspect-square grid place-items-center rounded-md  text-sm scale-[1] ${inArray(item.id, wishlistArray) ? " bg-lime-500 text-white" : "text-lime-500 bg-white"} shadow-md active:scale-[0.9]`} />
+                                    }} className={`fa-${inArray(item.id, wishlistArray) ? "solid" : "regular"} fa-heart  w-9 aspect-square grid place-items-center rounded-md  text-sm scale-[1] ${inArray(item.id, wishlistArray) ? " bg-lime-500 text-white" : "text-lime-500 bg-white"} shadow-md active:scale-[0.9]`} />
                                     <i onClick={() => {
                                         inArray(item.id, cartArray) ? dispatch(remove_product_from_cart(item.id)) : dispatch(add_product_in_cart(item))
                                         inArray(item.id, cartArray) ? dispatch(remove_data_from_cart_array(item.id)) : dispatch(add_data_in_cart_array(item.id))
