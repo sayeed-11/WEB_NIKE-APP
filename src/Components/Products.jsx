@@ -13,6 +13,7 @@ import {
     add_data_in_wishlist_array,
     remove_data_from_wishlist_array
 } from '../reduxStore/Actions';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -36,6 +37,7 @@ const Products = () => {
     }
 
     const [len, setLen] = useState(6)
+    const navigate = useNavigate()
 
     // const addFavData = (index) => {
     //     if (!favArray.includes(index)) {
@@ -134,7 +136,10 @@ const Products = () => {
                         })
                     }
                 </div>
-                <button onClick={() => setLen(JaordanShoes.length)} className='mt-5'>
+                <button onClick={() => {
+                    setLen(JaordanShoes.length)
+                    navigate('/ShoesMainPage')
+                }} className='mt-5'>
                     <span className=' bg-lime-500 text-white px-10 py-4 text-xs rounded-full'>View All Products</span>
                 </button>
             </div>

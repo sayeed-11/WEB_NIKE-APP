@@ -21,7 +21,7 @@ function App() {
 
 
   return (
-    <div className={`App  w-full min-h-screen bg-slate-100 relative flex flex-col justify-center`}>
+    <div className={`App  w-full min-h-screen max-w-[1350px] mx-auto bg-slate-100 relative flex flex-col justify-center`}>
       <NavigationBar />
       <HomePage />
       <PopularProducts/>

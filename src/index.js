@@ -10,6 +10,7 @@ import WishList from './Components/Wishlist/WishList';
 import MyAccount from './Components/MyAccount/MyAccount';
 // import NavigationBar from './Components/NavigationBar';
 import Favourites from './Components/MyAccount/Favourites';
+import ShoesMainPage from './Components/AllShoes/ShoesMainPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -22,6 +23,7 @@ root.render(
         <Route path="/WishList" element={<WishList />} />
         <Route path="/MyAccount" element={<MyAccount />} />
         <Route path="/Favourites" element={<Favourites />} />
+        <Route path="/ShoesMainPage" element={<ShoesMainPage />} />
       </Routes>
     </BrowserRouter>
   </Provider>

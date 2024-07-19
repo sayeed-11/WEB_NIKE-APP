@@ -27,7 +27,7 @@ const CartList = () => {
     const {detailsReducer} = useSelector(state => state)
 
     return (
-        <div className='fixed top-0 pt-0 h-[100%] w-full bg-slate-100'>
+        <div className='fixed top-0 pt-0 h-[100%] w-full bg-slate-100 max-w-[1350px] left-[50%] -translate-x-[50%]'>
             <NavigationBar />
             <div className='h-[100%] overflow-auto w-full pt-16 grid px-0 sm:px-5 space-y-10'>
                 <div className='flex flex-col lg:flex-row w-full justify-center gap-x-20 gap-y-16'>

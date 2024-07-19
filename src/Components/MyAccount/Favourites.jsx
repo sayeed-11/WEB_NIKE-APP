@@ -72,7 +72,7 @@ const FavouriteData = () => {
             <h1 className='text-3xl font-nike'>Favourites</h1>
             <button onClick={() => {
                 setEdit(!isEdit)
-                }} className={`px-8 py-2   rounded-md ${isEdit ? "bg-black text-white py-3" : "bg-white text-black border-2 border-black"}`}>{isEdit ? "Done" : "Edit"}</button>
+                }} className={`px-8 py-2   rounded-md ${isEdit ? "bg-black text-white py-2.5" : "bg-slate-100 text-black border-2 border-black"} font-nike`}>{isEdit ? "Done" : "Edit"}</button>
             </div>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 py-10'>
                 {

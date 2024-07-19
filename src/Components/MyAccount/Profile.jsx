@@ -56,7 +56,7 @@ const Buttons = ({ activeLink, setLink }) => {
                 links.map((link, index) => {
                     return (
                         <button
-                            className={`${activeLink === link ? "text-lime-500 scale-[1.4]" : "text-black"}`}
+                            className={`${activeLink === link ? "text-lime-500 text-[1.5rem]" : "text-black"}`}
                             key={index}
                             onClick={() => { setLink(link) }}
                         >{link}</button>
@@ -104,12 +104,12 @@ const NikeApp = () => {
     return (
         <div className='px-5 md:px-10 font-nike'>
             <h1 className='text-2xl'>Nike App</h1>
-            <div className=' flex flex-col md:flex-row gap-x-5'>
+            <div className=' flex flex-col sm:flex-row gap-x-5'>
                 {
                     nikeApp.map((data, index) => {
                         const { name, description, logo, img } = data;
                         return (
-                            <div className='w-[100%] sm:w-[25%] bg-white space-y-5 pb-5'>
+                            <div className='w-[100%] sm:w-[45%] md:w-[35%] lg:w-[25%] bg-white space-y-5 pb-5'>
                                 <img className='w-full' src={img} alt="" />
                                 <div className='px-5 flex items-center gap-x-5'>
                                     <img className='w-12' src={logo} alt="" />

@@ -11,7 +11,7 @@ const myLinks = ["Profile", "Inbox", "Order", "Favourites", "Settings"]
 const MyAccount = () => {
     const [display, setDisplay] = useState("Profile");
     return (
-        <div className='bg-slate-100 w-full min-h-screen pt-3 sm:pt-10 space-y-16'>
+        <div className='bg-slate-100 w-full min-h-screen pt-3 sm:pt-10 space-y-16 max-w-[1350px] mx-auto'>
             <NavigationBar/>
             <AccountLinks setDisplay={setDisplay} display={display} />
             <div className='w-full'>
