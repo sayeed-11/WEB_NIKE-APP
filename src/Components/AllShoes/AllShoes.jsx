@@ -1,11 +1,22 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { JaordanShoes } from '../../data/MenShoes/Jordan'
 
+import { useDispatch } from 'react-redux';
+import {
+    set_data,
+} from '../../reduxStore/Actions';
+import { useNavigate } from 'react-router-dom';
+
 const AllShoes = ({hasFilter}) => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    },[])
     const [isHover, setHover] = useState(false);
     const [selected, setSelection] = useState("");
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
     return (
-        <div className={` ${hasFilter ? "w-[100%]" : "w-[100%] lg:w-[80%]"} overflow-auto  gap-x-5 gap-y-10 flex flex-wrap  sm:grid grid-cols-2 md:grid-cols-3 px-5 lg:px-10 transition-all`}>
+        <div className={` ${hasFilter ? "w-[100%]" : "w-[100%] lg:w-[80%]"} overflow-auto gap-x-3 sm:gap-x-5 gap-y-10   grid grid-cols-2 md:grid-cols-3 px-3 sm:px-5 lg:px-10 transition-all`}>
             {
                 JaordanShoes.map((item, index) => {
                     return (
@@ -20,7 +31,10 @@ const AllShoes = ({hasFilter}) => {
                         }}
                         >
                             <div className='overflow-hidden  rounded-sm'>
-                                <img className='-translate-y-20' src={item.colorsAvailable[0].images[0]} alt="" />
+                                <button onClick={() => {
+                                    navigate('/ViewDetails')
+                                    dispatch(set_data(item));
+                                }}><img className='-translate-y-16' src={item.colorsAvailable[0].images[0]} alt="" /></button>
                                 {isHover && selected === item.colorsAvailable[0].style ?  <AvailableColor item={item} />  : <PriceDetails item={item}/>}
                             </div>
                         </button>
@@ -38,9 +52,9 @@ const PriceDetails = ({ item }) => {
         <div className='-translate-y-20 -mb-20 p-2 font-nike bg-white'>
             <h1 className='text-left line-clamp-1'>{item.colorsAvailable[0].name}</h1>
             <p className='text-xs text-left'>{item.type}</p>
-            <div className='flex justify-between mt-5'>
-                <p>{item.colorsAvailable.length} {item.colorsAvailable.length > 1 ? "colors" : "color"} </p>
-                <p>MRP : ₹ {item.colorsAvailable[0].price}</p>
+            <div className='flex flex-wrap justify-between gap-x-2 mt-1 sm:mt-5'>
+                <p className='text-left text-[0.9rem] sm:text-[1rem]'>{item.colorsAvailable.length} {item.colorsAvailable.length > 1 ? "colors" : "color"} </p>
+                <p className='text-left text-[0.9rem] sm:text-[1rem]'>MRP : ₹ {item.colorsAvailable[0].price}</p>
             </div>
         </div>
     )

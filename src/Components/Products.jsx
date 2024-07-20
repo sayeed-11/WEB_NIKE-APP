@@ -126,7 +126,12 @@ const Products = () => {
                                                 <span className='text-slate-400 line-through'>₹ {data.colorsAvailable[0].price - 5000}</span>
                                             </div>
                                         </div>
-                                        <button className='bg-lime-500 flex justify-center items-center px-5 py-3 gap-x-3 sm:ga-x-1 text-xs rounded-full '>
+                                        <button onClick={
+                                            () => {
+                                                navigate('/ViewDetails')
+                                                dispatch(set_data(data));
+                                            }
+                                        } className='bg-lime-500 flex justify-center items-center px-5 py-3 gap-x-3 sm:ga-x-1 text-xs rounded-full '>
                                             <span className='text-white'>Buy Now</span>
                                             <i className="fa-solid fa-arrow-right -rotate-45 text-xs text-white rounded-full" />
                                         </button>

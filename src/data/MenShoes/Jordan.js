@@ -129,6 +129,7 @@ export const JaordanShoes = [
                 id: 2,
                 name: "Tatum 2 'Vortex' PF",
                 colorShown: "Mint Foam/Black/Hyper Jade/Lava Glow",
+                price: 11495.00,
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/c005f0ca-249c-4fec-b60e-96f98c8b7c61/tatum-2-vortex-pf-basketball-shoes-WWbXXK.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/9d58ab4d-39ac-45ce-bb2d-6b0443ddded0/tatum-2-vortex-pf-basketball-shoes-WWbXXK.png",
@@ -196,6 +197,7 @@ export const JaordanShoes = [
                 id: 2,
                 name: "Tatum 2 'Legacy' PF",
                 colorShown: "White/Black/Wolf Grey/Electric Green",
+                price: 11495.00,
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/25f80230-e6d5-4c2d-928b-008e2270fdaa/tatum-2-legacy-pf-basketball-shoes-WWbXXK.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/e94c71b3-4586-48fe-a782-de0722caad17/tatum-2-legacy-pf-basketball-shoes-WWbXXK.png",
@@ -259,6 +261,7 @@ export const JaordanShoes = [
                 id: 2,
                 colorShown: "White/Wolf Grey/Team Red",
                 name: "Jordan Stay Loyal 3",
+                price: 10295.00,
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/d9aeda4d-8928-4495-91bd-bef61255eb8b/jordan-stay-loyal-3-shoes-GNHN2X.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8d107b8c-e6af-4dfc-9e99-4a7b7c953211/jordan-stay-loyal-3-shoes-GNHN2X.png",
@@ -276,6 +279,7 @@ export const JaordanShoes = [
                 id: 3,
                 colorShown: "Black/White/University Blue",
                 name: "Jordan Stay Loyal 3",
+                price: 10295.00,
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/be57f4b6-8f6a-4908-8668-cc3f6326be61/jordan-stay-loyal-3-shoes-GNHN2X.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a74483e6-cfcd-451b-a7f1-b89b48c4896f/jordan-stay-loyal-3-shoes-GNHN2X.png",
@@ -293,6 +297,7 @@ export const JaordanShoes = [
                 id: 4,
                 colorShown: "Wolf Grey/White/Cool Grey",
                 name: "Jordan Stay Loyal 3",
+                price: 10295.00,
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/83ace215-0db1-4e1a-849e-b513fbf3a200/jordan-stay-loyal-3-shoes-GNHN2X.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/b5897184-7faa-46b0-86e4-5b87b7e18b4f/jordan-stay-loyal-3-shoes-GNHN2X.png",
@@ -310,6 +315,7 @@ export const JaordanShoes = [
                 id: 5,
                 colorShown: "Black/White/Yellow Ochre",
                 name: "Jordan Stay Loyal 3",
+                price: 10295.00,
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/c4752792-e51c-4299-b8d8-1c2c61d2cf16/jordan-stay-loyal-3-shoes-GNHN2X.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/f28fa7b0-bfc0-4a2d-8f3f-61cc4d6434ec/jordan-stay-loyal-3-shoes-GNHN2X.png",
@@ -376,6 +382,7 @@ export const JaordanShoes = [
                 id: 2,
                 colorShown: " White/Black/Gym Red",
                 name: "Jordan Stay Loyal 3",
+                price: 10295.00,
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a50b46a9-7d16-4567-aaa0-2ae8397ffb53/jordan-stay-loyal-3-shoes-GNHN2X.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a7ee7b05-1493-4271-b9d0-90598c32e5d6/jordan-stay-loyal-3-shoes-GNHN2X.png",
@@ -393,6 +400,7 @@ export const JaordanShoes = [
                 id: 3,
                 colorShown: "Black/White/University Blue",
                 name: "Jordan Stay Loyal 3",
+                price: 10295.00,
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/be57f4b6-8f6a-4908-8668-cc3f6326be61/jordan-stay-loyal-3-shoes-GNHN2X.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a74483e6-cfcd-451b-a7f1-b89b48c4896f/jordan-stay-loyal-3-shoes-GNHN2X.png",
@@ -410,6 +418,7 @@ export const JaordanShoes = [
                 id: 4,
                 colorShown: "Wolf Grey/White/Cool Grey",
                 name: "Jordan Stay Loyal 3",
+                price: 10295.00,
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/83ace215-0db1-4e1a-849e-b513fbf3a200/jordan-stay-loyal-3-shoes-GNHN2X.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/b5897184-7faa-46b0-86e4-5b87b7e18b4f/jordan-stay-loyal-3-shoes-GNHN2X.png",
@@ -427,6 +436,7 @@ export const JaordanShoes = [
                 id: 5,
                 colorShown: "Black/White/Yellow Ochre",
                 name: "Jordan Stay Loyal 3",
+                price: 10295.00,
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/c4752792-e51c-4299-b8d8-1c2c61d2cf16/jordan-stay-loyal-3-shoes-GNHN2X.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/f28fa7b0-bfc0-4a2d-8f3f-61cc4d6434ec/jordan-stay-loyal-3-shoes-GNHN2X.png",
@@ -492,6 +502,7 @@ export const JaordanShoes = [
                 id: 2,
                 colorShown: " White/Black/Gym Red",
                 name: "Jordan Stay Loyal 3",
+                price: 10295.00,
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a50b46a9-7d16-4567-aaa0-2ae8397ffb53/jordan-stay-loyal-3-shoes-GNHN2X.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a7ee7b05-1493-4271-b9d0-90598c32e5d6/jordan-stay-loyal-3-shoes-GNHN2X.png",
@@ -509,6 +520,7 @@ export const JaordanShoes = [
                 id: 3,
                 colorShown: "White/Wolf Grey/Team Red",
                 name: "Jordan Stay Loyal 3",
+                price: 10295.00,
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/d9aeda4d-8928-4495-91bd-bef61255eb8b/jordan-stay-loyal-3-shoes-GNHN2X.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8d107b8c-e6af-4dfc-9e99-4a7b7c953211/jordan-stay-loyal-3-shoes-GNHN2X.png",
@@ -526,6 +538,7 @@ export const JaordanShoes = [
                 id: 4,
                 colorShown: "Wolf Grey/White/Cool Grey",
                 name: "Jordan Stay Loyal 3",
+                price: 10295.00,
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/83ace215-0db1-4e1a-849e-b513fbf3a200/jordan-stay-loyal-3-shoes-GNHN2X.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/b5897184-7faa-46b0-86e4-5b87b7e18b4f/jordan-stay-loyal-3-shoes-GNHN2X.png",
@@ -543,6 +556,7 @@ export const JaordanShoes = [
                 id: 5,
                 colorShown: "Black/White/Yellow Ochre",
                 name: "Jordan Stay Loyal 3",
+                price: 10295.00,
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/c4752792-e51c-4299-b8d8-1c2c61d2cf16/jordan-stay-loyal-3-shoes-GNHN2X.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/f28fa7b0-bfc0-4a2d-8f3f-61cc4d6434ec/jordan-stay-loyal-3-shoes-GNHN2X.png",
@@ -607,6 +621,7 @@ export const JaordanShoes = [
                 id: 2,
                 colorShown: " White/Black/Gym Red",
                 name: "Jordan Stay Loyal 3",
+                price: 10295.00,
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a50b46a9-7d16-4567-aaa0-2ae8397ffb53/jordan-stay-loyal-3-shoes-GNHN2X.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a7ee7b05-1493-4271-b9d0-90598c32e5d6/jordan-stay-loyal-3-shoes-GNHN2X.png",
@@ -624,6 +639,7 @@ export const JaordanShoes = [
                 id: 3,
                 colorShown: "White/Wolf Grey/Team Red",
                 name: "Jordan Stay Loyal 3",
+                price: 10295.00,
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/d9aeda4d-8928-4495-91bd-bef61255eb8b/jordan-stay-loyal-3-shoes-GNHN2X.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8d107b8c-e6af-4dfc-9e99-4a7b7c953211/jordan-stay-loyal-3-shoes-GNHN2X.png",
@@ -641,6 +657,7 @@ export const JaordanShoes = [
                 id: 4,
                 colorShown: "Black/White/University Blue",
                 name: "Jordan Stay Loyal 3",
+                price: 10295.00,
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/be57f4b6-8f6a-4908-8668-cc3f6326be61/jordan-stay-loyal-3-shoes-GNHN2X.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a74483e6-cfcd-451b-a7f1-b89b48c4896f/jordan-stay-loyal-3-shoes-GNHN2X.png",
@@ -658,6 +675,7 @@ export const JaordanShoes = [
                 id: 5,
                 colorShown: "Black/White/Yellow Ochre",
                 name: "Jordan Stay Loyal 3",
+                price: 10295.00,
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/c4752792-e51c-4299-b8d8-1c2c61d2cf16/jordan-stay-loyal-3-shoes-GNHN2X.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/f28fa7b0-bfc0-4a2d-8f3f-61cc4d6434ec/jordan-stay-loyal-3-shoes-GNHN2X.png",
@@ -722,6 +740,7 @@ export const JaordanShoes = [
                 id: 2,
                 colorShown: " White/Black/Gym Red",
                 name: "Jordan Stay Loyal 3",
+                price: 10295.00,
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a50b46a9-7d16-4567-aaa0-2ae8397ffb53/jordan-stay-loyal-3-shoes-GNHN2X.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a7ee7b05-1493-4271-b9d0-90598c32e5d6/jordan-stay-loyal-3-shoes-GNHN2X.png",
@@ -739,6 +758,7 @@ export const JaordanShoes = [
                 id: 3,
                 colorShown: "White/Wolf Grey/Team Red",
                 name: "Jordan Stay Loyal 3",
+                price: 10295.00,
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/d9aeda4d-8928-4495-91bd-bef61255eb8b/jordan-stay-loyal-3-shoes-GNHN2X.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8d107b8c-e6af-4dfc-9e99-4a7b7c953211/jordan-stay-loyal-3-shoes-GNHN2X.png",
@@ -756,6 +776,7 @@ export const JaordanShoes = [
                 id: 4,
                 colorShown: "Black/White/University Blue",
                 name: "Jordan Stay Loyal 3",
+                price: 10295.00,
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/be57f4b6-8f6a-4908-8668-cc3f6326be61/jordan-stay-loyal-3-shoes-GNHN2X.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a74483e6-cfcd-451b-a7f1-b89b48c4896f/jordan-stay-loyal-3-shoes-GNHN2X.png",
@@ -773,6 +794,7 @@ export const JaordanShoes = [
                 id: 5,
                 colorShown: "Wolf Grey/White/Cool Grey",
                 name: "Jordan Stay Loyal 3",
+                price: 10295.00,
                 images: [
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/83ace215-0db1-4e1a-849e-b513fbf3a200/jordan-stay-loyal-3-shoes-GNHN2X.png",
                     "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/b5897184-7faa-46b0-86e4-5b87b7e18b4f/jordan-stay-loyal-3-shoes-GNHN2X.png",

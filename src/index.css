@@ -35,3 +35,9 @@ scroll-behavior: smooth;
     width: 70px;
     padding: 0px 5px;
 }
+.aside {
+    scrollbar-width: 0px;
+}
+.aside::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+  }
