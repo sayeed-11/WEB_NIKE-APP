@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { JaordanShoes } from '../../data/MenShoes/Jordan'
 
 import { useDispatch } from 'react-redux';
 import {
@@ -7,7 +6,7 @@ import {
 } from '../../reduxStore/Actions';
 import { useNavigate } from 'react-router-dom';
 
-const AllShoes = ({hasFilter}) => {
+const AllShoes = ({hasFilter, JaordanShoes}) => {
     useEffect(() => {
         window.scrollTo(0, 0)
     },[])

@@ -14,6 +14,7 @@ import {
     remove_data_from_wishlist_array
 } from '../reduxStore/Actions';
 import { useNavigate } from 'react-router-dom';
+import { allNikeShoes } from '../data/AllNikeShoes';
 
 
 
@@ -128,7 +129,7 @@ const Products = () => {
                                         </div>
                                         <button onClick={
                                             () => {
-                                                navigate('/ViewDetails')
+                                                navigate('/ViewDetails', { state: { myData: 'some value' } })
                                                 dispatch(set_data(data));
                                             }
                                         } className='bg-lime-500 flex justify-center items-center px-5 py-3 gap-x-3 sm:ga-x-1 text-xs rounded-full '>
@@ -143,7 +144,7 @@ const Products = () => {
                 </div>
                 <button onClick={() => {
                     setLen(JaordanShoes.length)
-                    navigate('/ShoesMainPage')
+                    navigate('/ShoesMainPage', {state : {JaordanShoes : allNikeShoes}})
                 }} className='mt-5'>
                     <span className=' bg-lime-500 text-white px-10 py-4 text-xs rounded-full'>View All Products</span>
                 </button>

@@ -3,8 +3,12 @@ import { useSelector } from 'react-redux';
 import NavigationBar from '../NavigationBar';
 import { ExtraData } from '../Cart/CartList';
 import Footer from '../Footer';
+import { useLocation } from 'react-router-dom';
 
-const ViewDetails = () => {
+const ViewDetails = (props) => {
+  const location = useLocation();
+  const myData = location.state;
+  console.log('value --- ', myData);
   useEffect(() => {
     window.scrollTo(0, 0)
 },[])
@@ -16,7 +20,7 @@ const ViewDetails = () => {
   }
 
   return (
-    <div className='w-full min-h-screen bg-slate-100 pt-5 sm:pt-20 relative space-y-10 max-w-[1350px] mx-auto overflow-x-hidden'>
+    <div className='w-full min-h-screen bg-slate-100 pt-5 sm:pt-20 relative space-y-10 max-w-[1350px] mx-auto overflow-x-hidden sm:overflow-clip'>
       <NavigationBar />
       <div className='grid grid-cols-1 lg:grid-cols-2 sm:gap-x-10 gap-y-10 px-2 sm:px-5'>
         <ImageSection productDetails={productDetails}  colorIndex={colorIndex}/>
@@ -45,7 +49,7 @@ const ImageSection = ({ productDetails, colorIndex }) => {
         {
           productDetails.colorsAvailable[colorIndex].images.map((thumb, index) => (
             <button onMouseEnter={() => {setIndex(index)}} className='w-full' key={index}>
-              <img className={`min-w-[70px] sm:w-full ${imageIndex === index ? "border-2 border-black" : "border-none"} aspect-square object-cover rounded-md`} src={thumb} alt="" />
+              <img className={`min-w-[70px] sm:min-w-0 sm:w-full ${imageIndex === index ? "border-2 border-black" : "border-none"} aspect-square object-cover rounded-md`} src={thumb} alt="" />
             </button>
           ))
         }

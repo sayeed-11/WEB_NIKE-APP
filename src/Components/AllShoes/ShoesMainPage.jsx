@@ -6,10 +6,21 @@ import Footer from '../Footer'
 import FilterIcon from '../../icons/FilterIcon'
 import ShortDown from '../../icons/ShortDown'
 
+// import { JaordanShoes } from '../../data/MenShoes/Jordan'
+
+import { useLocation } from 'react-router-dom'
+// import { shoes } from '../../data/MenShoes/Shoes'
+
 const ShoesMainPage = () => {
     const [hasFilter, setFilterValue] = useState(false);
     const [isShorted, setShortedvalue] = useState(false);
     const [headerType, setHeader] = useState("All Shoes")
+
+    const location = useLocation();
+    const Shoes = location.state?.JaordanShoes;
+
+    console.log(Shoes);
+
     return (
         <div className='min-h-screen w-full bg-slate-100 box-border flex flex-col pt-[70px] space-y-5'>
             <NavigationBar />
@@ -42,7 +53,7 @@ const ShoesMainPage = () => {
             </div>
             <div className='sticky top-[0px] flex pb-[650px] sm:pb-[450px] '>
                 <FilterBar hasFilter={hasFilter} setHeader={setHeader} headerType={headerType} />
-                <AllShoes hasFilter={hasFilter} />
+                <AllShoes hasFilter={hasFilter} JaordanShoes={Shoes} />
             </div>
             <Footer />
         </div>
