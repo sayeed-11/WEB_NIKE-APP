@@ -1,13 +1,14 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const productType = ["All Shoes", "Athletic", "Authentic", "Lather", "Canvas"];
 
 const FilterBar = ({ hasFilter, setHeader, headerType }) => {
     const innerHeight = window.innerHeight
+    const innerWidth = window.innerWidth;
     return (
-        <div style={{ height: (innerHeight - 110) }} className={`lg:block hidden  ${hasFilter ? "w-[0%] overflow-hidden px-0" : "overflow-y-auto w-[20%] px-5"} sticky top-[115px] space-y-5 font-nike transition-all`}>
+        <div style={{ height: innerWidth >= 1024 ? (innerHeight - 110) : (hasFilter ? 0 : (innerHeight - 210)) }} className={`lg:block fixed  ${hasFilter ? "w-[100%] lg:w-[0%] overflow-hidden px-0" : "overflow-y-auto w-full lg:w-[20%] lg:px-5"} lg:sticky lg:top-[115px] bg-white lg:bg-transparent bottom-0 lg:bottom-auto lg:h-auto space-y-5 font-nike transition-all duration-[0.3s] z-50 pb-5 lg:pb-0`}>
             <Types setHeader={setHeader} headerType={headerType} />
-            <div className='flex flex-col'>
+            <div className='flex flex-col gap-y-5 lg:gap-y-5 px-5 lg:px-0'>
                 <Gender />
                 <ShopByPrice />
                 <SaleAndOffer />
@@ -25,14 +26,14 @@ export default FilterBar
 
 const Types = ({ setHeader, headerType }) => {
     return (
-        <div className='flex flex-col justify-start items-start'>
+        <div className={`flex lg:flex-col justify-start items-start overflow-x-auto w-[100%]  sticky top-0 lg:static z-50 py-3 shadow-md lg:shadow-none bg-white lg:bg-transparent lg:py-0`}>
             {
                 productType.map((type, index) => {
                     return (
                         <button
                             key={index}
                             onClick={() => { setHeader(type) }}
-                            className={`${type === headerType ? "text-black" : "text-black/[0.5]"}`}
+                            className={`${type === headerType ? "text-black" : "text-black/[0.5]"} min-w-[100px] lg:min-w-0`}
                         >{type}</button>
                     )
                 })
@@ -44,10 +45,10 @@ const Types = ({ setHeader, headerType }) => {
 const Gender = () => {
     const [view, setView] = useState(false);
     return (
-        <div className='border-t-[1.5px] border-slate-400 relative'>
-            <Arrow view={view}/>
-            <button className='w-full text-left py-3' onClick={() => { setView(!view) }}><h1>Gender</h1></button>
-            <ul className={`${view ? "h-[90px]" : "h-0"} text-sm overflow-hidden transition-all`}>
+        <div className='lg:border-t-[1.5px] border-slate-400 relative'>
+            <Arrow view={view} />
+            <button className='w-full text-left py-3' onClick={() => { setView(!view) }}><h1 className='text-xl lg:text-base'>Gender</h1></button>
+            <ul className={`${view ? "lg:h-[90px]" : "lg:h-0"} h-auto lg:text-sm overflow-hidden transition-all`}>
                 <li className='space-x-3 flex items-center'>
                     <input className='w-4 aspect-square' type="checkbox" />
                     <span>Male</span>
@@ -69,10 +70,10 @@ const Gender = () => {
 const ShopByPrice = () => {
     const [view, setView] = useState(false);
     return (
-        <div className='border-t-[1.5px] border-slate-400 relative'>
-            <Arrow view={view}/>
-            <button className='w-full text-left py-3' onClick={() => { setView(!view) }}><h1>Shop By Price</h1></button>
-            <ul className={`${view ? "h-[110px]" : "h-0"} text-sm overflow-hidden transition-all `}>
+        <div className='lg:border-t-[1.5px] border-slate-400 relative'>
+            <Arrow view={view} />
+            <button className='w-full text-left py-3' onClick={() => { setView(!view) }}><h1 className='text-xl lg:text-base'>Shop By Price</h1></button>
+            <ul className={`${view ? "lg:h-[110px]" : "lg:h-0"} h-auto lg:text-sm overflow-hidden transition-all `}>
                 <li className='space-x-3 flex items-center'>
                     <input className='w-4 aspect-square' type="checkbox" />
                     <span>Under ₹ 2,500.00</span>
@@ -99,10 +100,10 @@ const ShopByPrice = () => {
 const SaleAndOffer = () => {
     const [view, setView] = useState(false);
     return (
-        <div className='border-t-[1.5px] border-slate-400 relative'>
-            <Arrow view={view}/>
-            <button className='w-full text-left py-3' onClick={() => { setView(!view) }}><h1>Sale & Offer</h1></button>
-            <ul className={`${view ? "h-[30px]" : "h-0"} text-sm overflow-hidden transition-all`}>
+        <div className='lg:border-t-[1.5px] border-slate-400 relative'>
+            <Arrow view={view} />
+            <button className='w-full text-left py-3' onClick={() => { setView(!view) }}><h1 className='text-xl lg:text-base'>Sale & Offer</h1></button>
+            <ul className={`${view ? "lg:h-[30px]" : "lg:h-0"} h-auto text-sm overflow-hidden transition-all`}>
                 <li className='space-x-3 flex items-center'>
                     <input className='w-4 aspect-square' type="checkbox" />
                     <span>sale</span>
@@ -116,10 +117,10 @@ const SaleAndOffer = () => {
 const Size = () => {
     const [view, setView] = useState(false);
     return (
-        <div className='border-t-[1.5px] border-slate-400 relative'>
-            <Arrow view={view}/>
-            <button className='w-full text-left py-3' onClick={() => { setView(!view) }}><h1>Size</h1></button>
-            <div className={`${view ? "h-[500px] py-3" : "h-0"} text-sm overflow-hidden transition-all grid grid-cols-3 gap-2`}>
+        <div className='lg:border-t-[1.5px] border-slate-400 relative'>
+            <Arrow view={view} />
+            <button className='w-full text-left py-3' onClick={() => { setView(!view) }}><h1 className='text-xl lg:text-base'>Size</h1></button>
+            <div className={`${view ? "lg:h-[500px] py-3" : "lg:h-0"} h-auto lg:text-sm overflow-hidden transition-all grid lg:grid-cols-3 md:grid-cols-7 grid-cols-5 md:w-[50%] gap-2`}>
                 <button className='py-1 border-2 border-black rounded-md'>2.5</button>
                 <button className='py-1 border-2 border-black rounded-md'>3</button>
                 <button className='py-1 border-2 border-black rounded-md'>3.5</button>
@@ -159,10 +160,10 @@ const Colors = () => {
     const [selectedColor, setColor] = useState(-1);
     const colors = ["black", "blue-500", "rose-900", "green-500", "amber-500", "pink-500", "violet-500", "red-500", "white", "yellow-500"]
     return (
-        <div className='border-t-[1.5px] border-slate-400 relative'>
-            <Arrow view={view}/>
-            <button className='w-full text-left py-3' onClick={() => { setView(!view) }}><h1>Colors</h1></button>
-            <div className={`${view ? "h-[95px] py-3 px-2" : "h-0"} text-sm overflow-hidden transition-all grid grid-cols-5 gap-2`}>
+        <div className='lg:border-t-[1.5px] border-slate-400 relative'>
+            <Arrow view={view} />
+            <button className='w-full text-left py-3' onClick={() => { setView(!view) }}><h1 className='text-xl lg:text-base'>Colors</h1></button>
+            <div className={`${view ? "lg:h-[95px] py-3 px-2" : "lg:h-0"} h-auto lg:text-sm overflow-hidden transition-all grid grid-cols-5 gap-2`}>
                 {
                     colors.map((color, index) => {
                         return (
@@ -180,10 +181,10 @@ const Colors = () => {
 const ShoesHeight = () => {
     const [view, setView] = useState(false);
     return (
-        <div className='border-t-[1.5px] border-slate-400 relative'>
-            <Arrow view={view}/>
-            <button className='w-full text-left py-3' onClick={() => { setView(!view) }}><h1>Shoes Height</h1></button>
-            <ul className={`${view ? "h-[90px]" : "h-0"} text-sm overflow-hidden transition-all`}>
+        <div className='lg:border-t-[1.5px] border-slate-400 relative'>
+            <Arrow view={view} />
+            <button className='w-full text-left py-3' onClick={() => { setView(!view) }}><h1 className='text-xl lg:text-base'>Shoes Height</h1></button>
+            <ul className={`${view ? "lg:h-[90px]" : "lg:h-0"} h-auto lg:text-sm overflow-hidden transition-all`}>
                 <li className='space-x-3 flex items-center'>
                     <input className='w-4 aspect-square' type="checkbox" />
                     <span>Low Top</span>
@@ -206,10 +207,10 @@ const ShoesHeight = () => {
 const Brand = () => {
     const [view, setView] = useState(false);
     return (
-        <div className='border-t-[1.5px] border-slate-400 relative'>
-            <Arrow view={view}/>
-            <button className='w-full text-left py-3' onClick={() => { setView(!view) }}><h1>Brand</h1></button>
-            <ul className={`${view ? "h-[110px]" : "h-0"} text-sm overflow-hidden transition-all`}>
+        <div className='lg:border-t-[1.5px] border-slate-400 relative'>
+            <Arrow view={view} />
+            <button className='w-full text-left py-3' onClick={() => { setView(!view) }}><h1 className='text-xl lg:text-base'>Brand</h1></button>
+            <ul className={`${view ? "lg:h-[110px]" : "lg:h-0"} h-auto lg:text-sm overflow-hidden transition-all`}>
                 <li className='space-x-3 flex items-center'>
                     <input className='w-4 aspect-square' type="checkbox" />
                     <span>Nike Sportswear</span>
@@ -236,9 +237,9 @@ const Brand = () => {
 }
 
 
-const Arrow = ({view}) => {
+const Arrow = ({ view }) => {
     return (
-        <div className={`absolute ${view ? "top-5" : "top-[50%] -translate-y-[50%]"} right-0  flex scale-[0.70]`}>
+        <div className={`absolute ${view ? "top-5" : "top-[50%] -translate-y-[50%]"} right-0  lg:flex scale-[0.70] hidden`}>
             <div className={`w-3 h-[1.5px] bg-black ${view ? "-rotate-45" : "rotate-45"} translate-x-[2px] transition-all`} />
             <div className={`w-3 h-[1.5px] bg-black ${view ? "rotate-45" : "-rotate-45"} -translate-x-[2px] transition-all`} />
         </div>

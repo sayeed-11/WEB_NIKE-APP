@@ -15,7 +15,7 @@ const AllShoes = ({hasFilter, JaordanShoes}) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     return (
-        <div className={` ${hasFilter ? "w-[100%]" : "w-[100%] lg:w-[80%]"} overflow-auto gap-x-3 sm:gap-x-5 gap-y-10   grid grid-cols-2 md:grid-cols-3 px-3 sm:px-5 lg:px-10 transition-all`}>
+        <div className={` ${hasFilter ? "w-[100%]" : "w-[100%] lg:w-[80%]"} overflow-auto gap-x-3 sm:gap-x-5 gap-y-10   grid grid-cols-2 md:grid-cols-3 px-3 sm:px-5 lg:px-10 transition-all duration-[0.3s]`}>
             {
                 JaordanShoes.map((item, index) => {
                     return (
@@ -67,16 +67,16 @@ const AvailableColor = ({ item }) => {
                     item.colorsAvailable.slice(0, 4).map((color, index) => {
                         return (
                             <button>
-                                <img className='w-12 aspect-square' src={color.images[0]} alt="" />
+                                <img className='w-12 max-w-[30px] sm:max-w-none aspect-square' src={color.images[0]} alt="" />
                             </button>
                         )
                     })
                 }
                 {item.colorsAvailable.length > 4 && <IndicateMoreItem item={item} />}
             </div>
-            <div className='flex justify-between'>
+            <div className='flex justify-between items-center'>
                 <p className='text-left'>MRP : ₹ {item.colorsAvailable[0].price}</p>
-                <i className='fa-regular fa-heart scale-[1.5] mr-5'/>
+                <i className='fa-regular fa-heart scale-[1.5] mr-2 sm:mr-5'/>
             </div>
         </div>
     )
@@ -84,7 +84,7 @@ const AvailableColor = ({ item }) => {
 
 const IndicateMoreItem = ({ item }) => {
     return (
-        <div className='w-12 aspect-square bg-white flex justify-center items-center border-2 border-black'>
+        <div className='w-12 min-w-7 aspect-square bg-white flex justify-center items-center border-2 border-black'>
             <span>+</span>
             <span>{item.colorsAvailable.length - 4}</span>
         </div>

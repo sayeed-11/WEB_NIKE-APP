@@ -11,7 +11,7 @@ const myLinks = ["Profile", "Inbox", "Order", "Favourites", "Settings"]
 const MyAccount = () => {
     const [display, setDisplay] = useState("Profile");
     return (
-        <div className='bg-slate-100 w-full min-h-screen pt-3 sm:pt-10 space-y-16 max-w-[1350px] mx-auto'>
+        <div className='bg-slate-100 w-full min-h-screen pt-3 sm:pt-5 space-y-8 sm:space-y-16 max-w-[1350px] mx-auto'>
             <NavigationBar/>
             <AccountLinks setDisplay={setDisplay} display={display} />
             <div className='w-full'>
@@ -29,17 +29,17 @@ export default MyAccount
 
 
 const AccountLinks = ({ setDisplay, display }) => {
-    const [bgColor, setBgColor] = useState("slate-100");
+    const [shadowColor, setShadowColor] = useState("slate-100");
     window.addEventListener('scroll', () => {
         if(window.pageYOffset > 0) {
-            setBgColor("white");
+            setShadowColor("shadow-md");
         }
         else{
-            setBgColor("slate-100")
+            setShadowColor("shadow-none")
         }
     })
     return (
-        <div className={`flex justify-start sm:justify-center font-nike sticky top-[56px] bg-${bgColor} z-40`}>
+        <div className={`flex justify-start sm:justify-center font-nike sticky top-[56px] bg-slate-100 ${shadowColor} z-40`}>
             <ul className='flex gap-x-5 md:gap-x-10 overflow-auto px-5 py-5'>
                 {
                     myLinks.map((link, index) => {

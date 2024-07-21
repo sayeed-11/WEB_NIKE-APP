@@ -23,9 +23,18 @@ const NavigationBar = () => {
         cartData,
 
     } = useSelector(state => state.productInCart)
+    const [shadowColor, setShadowColor] = useState("slate-100");
+    window.addEventListener('scroll', () => {
+        if(window.pageYOffset > 0) {
+            setShadowColor("shadow-md");
+        }
+        else{
+            setShadowColor("shadow-none")
+        }
+    })
 
     return (
-        <nav className=' flex justify-between sm:grid grid-cols-2 md:grid-cols-3 fixed top-0 max-w-[1350px] w-full backdrop-blur-lg z-50'>
+        <nav className={` flex justify-between sm:grid grid-cols-2 md:grid-cols-3 fixed top-0 max-w-[1350px] bg-slate-100 w-full z-50 ${shadowColor} `}>
 
             <div onClick={() => {navigate('/')}} className="logo  flex items-center justify-start md:justify-center z-50 w-full bg-black lg:bg-transparent px-3">
                 <svg className={`lg:fill-black fill-white w-16 h-10`} xmlns="http://www.w3.org/2000/svg" viewBox="135.5 361.38 1000 356.39">
@@ -43,6 +52,7 @@ const NavigationBar = () => {
                 womenHeight={womenHeight}
                 kidsHeight={kidsHeight}
                 isBar={isBar}
+                setBar={setBar}
             />}
 
             <div className={`buttons flex justify-center gap-x-2 text-white z-50 bg-black py-1 ${hasSearch ? "translate-x-36" : "translate-x-0"}  transition-all px-3 py-2 relative`}>
