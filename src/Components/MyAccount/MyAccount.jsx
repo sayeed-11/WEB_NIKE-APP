@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import NavigationBar from '../NavigationBar'
 import Profile from './Profile';
 import Inbox from './Inbox';
@@ -10,6 +10,9 @@ const myLinks = ["Profile", "Inbox", "Order", "Favourites", "Settings"]
 
 const MyAccount = () => {
     const [display, setDisplay] = useState("Profile");
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    },[display])
     return (
         <div className='bg-slate-100 w-full min-h-screen pt-3 sm:pt-5 space-y-8 sm:space-y-16 max-w-[1350px] mx-auto'>
             <NavigationBar/>

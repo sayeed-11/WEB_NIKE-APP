@@ -17,6 +17,7 @@ import {
 
 import { shoes } from '../../data/MenShoes/Shoes';
 import ProductDetails from '../ShortDetails';
+import { useNavigate } from 'react-router-dom';
 
 const CartList = () => {
 
@@ -233,6 +234,7 @@ const EmptyCart = () => {
 export const ExtraData = () => {
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const { cartArray } = useSelector(state => state.cartDataReducer)
     const { wishlistArray } = useSelector(state => state.wishlistDataReducer)
@@ -293,7 +295,12 @@ export const ExtraData = () => {
                                             }
                                         </div>
                                     </div>
-                                    <button className=' bg-black w-[100%]  py-3 text-xs text-white rounded-md shadow-md text-slate-bg-slate-100 mt-1 flex justify-center items-center gap-x-3'>
+                                    <button onClick={
+                                            () => {
+                                                navigate('/ViewDetails', { state: { myData: 'some value', data : item } })
+                                                dispatch(set_data(item));
+                                            }
+                                        }  className=' bg-black w-[100%]  py-3 text-xs text-white rounded-md shadow-md text-slate-bg-slate-100 mt-1 flex justify-center items-center gap-x-3'>
                                         <span>Buy Now</span>
                                         <i className="fa-solid fa-arrow-right -rotate-45 text-xs text-white" />
                                     </button>

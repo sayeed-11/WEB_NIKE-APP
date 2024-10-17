@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 
 import SocialLink from '../../icons/SocialLink'
 import Privacy from '../../icons/Privacy'
@@ -10,6 +10,9 @@ import User from '../../icons/User'
 
 const Settings = () => {
   const [isActive, setActive] = useState("AccountDetails");
+  useEffect(() => {
+    window.scrollTo(0, 0)
+},[isActive])
   return (
     <div className='-mt-5 sm:-mt-10 font-nike sm:px-10 space-y-10 pb-10'>
       <div className='border-b-[1.5px] border-gray-400 px-3 sm:px-0'>
@@ -49,28 +52,28 @@ const AccountDetails = () => {
         </div>
         <div className='flex flex-col gap-y-1 relative'>
           <label className='absolute -top-[20%] left-3 bg-slate-100 px-2 text-xs' htmlFor="">Phone Number</label>
-          <input className='py-3 border-[1.5px] outline-none border-black rounded-md bg-transparent px-3' type="tel" />
+          <input className='py-3 border-[1.5px] outline-none border-black rounded-md bg-transparent px-3' value={"+91 "} maxLength={13} type="tel" />
         </div>
         <div className='flex flex-col gap-y-1 relative'>
           <label className='absolute -top-[20%] left-3 bg-slate-100 px-2 text-xs' htmlFor="">Date of Birth</label>
-          <input className='py-3 border-[1.5px] outline-none border-black rounded-md bg-transparent px-3' type="tel" />
+          <input className='py-3 border-[1.5px] outline-none border-black rounded-md bg-transparent px-3' type="date" />
         </div>
         <h1>Location</h1>
         <div className='flex flex-col gap-y-1 relative'>
           <label className='absolute -top-[20%] left-3 bg-slate-100 px-2 text-xs' htmlFor="">Country/Region</label>
-          <input className='py-3 border-[1.5px] outline-none border-black rounded-md bg-transparent px-3' type="tel" />
+          <input className='py-3 border-[1.5px] outline-none border-black rounded-md bg-transparent px-3 w-[100%]' type="text" />
         </div>
         <div className='flex flex-col gap-y-1 relative'>
           <label className='absolute -top-[20%] left-3 bg-slate-100 px-2 text-xs' htmlFor="">State</label>
-          <input className='py-3 border-[1.5px] outline-none border-black rounded-md bg-transparent px-3' type="tel" />
+          <input className='py-3 border-[1.5px] outline-none border-black rounded-md bg-transparent px-3' type="text" />
         </div>
         <div className='flex flex-col gap-y-1 relative'>
           <label className='absolute -top-[20%] left-3 bg-slate-100 px-2 text-xs' htmlFor="">Town/City</label>
-          <input className='py-3 border-[1.5px] outline-none border-black rounded-md bg-transparent px-3' type="tel" />
+          <input className='py-3 border-[1.5px] outline-none border-black rounded-md bg-transparent px-3' type="text" />
         </div>
         <div className='flex flex-col gap-y-1 relative'>
           <label className='absolute -top-[20%] left-3 bg-slate-100 px-2 text-xs' htmlFor="">Postcode</label>
-          <input className='py-3 border-[1.5px] outline-none border-black rounded-md bg-transparent px-3' type="tel" />
+          <input className='py-3 border-[1.5px] outline-none border-black rounded-md bg-transparent px-3' maxLength={6} type="tel" />
         </div>
 
         <div className='flex justify-between items-center border-b-[1px] border-t-[1px] border-black py-3'>
@@ -198,14 +201,14 @@ const SettingLinks = ({ setActive, isActive }) => {
   const [shadowColor, setShadowColor] = useState("slate-100");
   window.addEventListener('scroll', () => {
     if (window.pageYOffset > 100) {
-      setShadowColor("shadow-md bg-slate-100 border-t-[1.5px] border-black");
+      setShadowColor("shadow-md sm:shadow-none bg-slate-100 border-t-[1.5px] sm:border-none border-black");
     }
     else {
       setShadowColor("shadow-none")
     }
   })
   return (
-    <div className={`${shadowColor} w-[100%] sm:w-auto px-3 sm:px-0 pb-3 sm:pb-0 -mt-3 sm:-mt-0 sticky top-[120px] sm:static sm:top-0 overflow-clip z-40`}>
+    <div className={`${shadowColor} w-[100%] sm:w-auto px-3 sm:px-0 pb-3 sm:pb-0 -mt-3 sm:-mt-0 sticky top-[120px] sm:top-[130px]  sm:h-[400px]  overflow-clip z-30`}>
       <ul className='flex items-center justify-between sm:block space-y-5'>
 
         <li>

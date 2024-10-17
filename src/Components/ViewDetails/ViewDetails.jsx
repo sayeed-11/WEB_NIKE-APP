@@ -5,15 +5,26 @@ import { ExtraData } from '../Cart/CartList';
 import Footer from '../Footer';
 import { useLocation } from 'react-router-dom';
 
-const ViewDetails = (props) => {
+const ViewDetails = () => {
+  const [colorIndex, setColorIndex] = useState(0);
+  // const [isZeroIndex, setZeroIndex] = useState(true);
+
+  //Example
   const location = useLocation();
   const myData = location.state;
-  console.log('value --- ', myData);
-  useEffect(() => {
-    window.scrollTo(0, 0)
-},[])
-  const [colorIndex, setColorIndex] = useState(0);
+  const data = myData.data;
+  console.log('value --- ',data);
+
   const productDetails = useSelector(state => state.setData.productDetails);
+  useEffect(() => {
+    // setColorIndex(0)
+    // isZeroIndex(true);
+    window.scrollTo(0, 0);
+    console.log(colorIndex);
+  },[productDetails])
+  // useEffect(() => {
+  //   setColorIndex(0);
+  // }, [productDetails]) 
 
   if (!productDetails) {
     return <div>Loading...</div>;
@@ -23,8 +34,8 @@ const ViewDetails = (props) => {
     <div className='w-full min-h-screen bg-slate-100 pt-5 sm:pt-20 relative space-y-10 max-w-[1350px] mx-auto overflow-x-hidden sm:overflow-clip'>
       <NavigationBar />
       <div className='grid grid-cols-1 lg:grid-cols-2 sm:gap-x-10 gap-y-10 px-2 sm:px-5'>
-        <ImageSection productDetails={productDetails}  colorIndex={colorIndex}/>
-        <ContentSection productDetails={productDetails} setColorIndex={setColorIndex} colorIndex={colorIndex}/>
+        <ImageSection productDetails={data} colorIndex={colorIndex} />
+        <ContentSection productDetails={data} setColorIndex={setColorIndex} colorIndex={colorIndex} />
       </div>
       <div className='font-nike px-4 sm:px-10 '>
         <h1 className='text-2xl'>How Others Are Wearing It</h1>
@@ -48,7 +59,7 @@ const ImageSection = ({ productDetails, colorIndex }) => {
       <div className='aside w-[100%] sm:w-[10%] overflow-auto flex flex-row sm:flex-col gap-2'>
         {
           productDetails.colorsAvailable[colorIndex].images.map((thumb, index) => (
-            <button onMouseEnter={() => {setIndex(index)}} className='w-full' key={index}>
+            <button onMouseEnter={() => { setIndex(index) }} className='w-full' key={index}>
               <img className={`min-w-[70px] sm:min-w-0 sm:w-full ${imageIndex === index ? "border-2 border-black" : "border-none"} aspect-square object-cover rounded-md`} src={thumb} alt="" />
             </button>
           ))
@@ -58,14 +69,14 @@ const ImageSection = ({ productDetails, colorIndex }) => {
         <img className='w-full h-full object-cover rounded-md' src={productDetails.colorsAvailable[colorIndex].images[imageIndex]} alt="" />
         <div className='absolute w-full flex justify-end gap-x-3 bottom-5 right-5'>
           <button onClick={() => {
-            setIndex(imageIndex === 0 ? productDetails.colorsAvailable[colorIndex].images.length -1 : imageIndex - 1)
+            setIndex(imageIndex === 0 ? productDetails.colorsAvailable[colorIndex].images.length - 1 : imageIndex - 1)
           }} className='bg-white/[0.5] rounded-full'>
-            <i className='fa-solid fa-chevron-left py-3 px-4'/>
+            <i className='fa-solid fa-chevron-left py-3 px-4' />
           </button>
           <button onClick={() => {
-            setIndex(imageIndex === productDetails.colorsAvailable[colorIndex].images.length -1 ? 0 : imageIndex + 1)
+            setIndex(imageIndex === productDetails.colorsAvailable[colorIndex].images.length - 1 ? 0 : imageIndex + 1)
           }} className='bg-white/[0.5] rounded-full'>
-          <i className='fa-solid fa-chevron-right py-3 px-4'/>
+            <i className='fa-solid fa-chevron-right py-3 px-4' />
           </button>
         </div>
       </div>
@@ -89,11 +100,11 @@ const ContentSection = ({ productDetails, setColorIndex, colorIndex }) => {
           ))
         }
       </div>
-      <AllColors colorsAvailable={colorsAvailable} setColorIndex={setColorIndex} colorIndex={colorIndex}/>
+      <AllColors colorsAvailable={colorsAvailable} setColorIndex={setColorIndex} colorIndex={colorIndex} />
       <Size />
       <Buttons />
       <Description colorsAvailable={colorsAvailable} colorIndex={colorIndex} />
-      <ColorShowAndStyle colorsAvailable={colorsAvailable} colorIndex ={colorIndex} />
+      <ColorShowAndStyle colorsAvailable={colorsAvailable} colorIndex={colorIndex} />
       <div>
         <DeliverAndReturns delivery_returns={delivery_returns} />
         <ProductInformations product_informations={product_informations} />
@@ -127,11 +138,11 @@ const Buttons = () => {
     <div className='flex flex-col gap-y-5'>
       <button className='bg-black text-white py-5 rounded-full flex items-center justify-center gap-x-3 hover:tracking-wide'>
         <span>Add To Bag</span>
-        <i className='fa-solid fa-bag-shopping'/>
+        <i className='fa-solid fa-bag-shopping' />
       </button>
       <button className='border-2 border-black py-5 rounded-full flex items-center justify-center gap-x-3 hover:tracking-wide'>
         <span>Favourite</span>
-        <i className='fa-regular fa-heart'/>
+        <i className='fa-regular fa-heart' />
       </button>
       <p className='text-gray-400'>This product is excluded from site promotions and discounts.</p>
     </div>
@@ -146,7 +157,7 @@ const Description = ({ colorsAvailable, colorIndex }) => {
   );
 };
 
-const ColorShowAndStyle = ({ colorsAvailable,colorIndex }) => {
+const ColorShowAndStyle = ({ colorsAvailable, colorIndex }) => {
   return (
     <div>
       <ul className='space-y-3'>
@@ -230,13 +241,13 @@ const Arrow = ({ view }) => {
 };
 
 
-const AllColors = ({colorsAvailable, setColorIndex, colorIndex}) => {
-  return(
+const AllColors = ({ colorsAvailable, setColorIndex, colorIndex }) => {
+  return (
     <div className='flex gap-3 flex-wrap'>
       {
         colorsAvailable.map((color, index) => {
-          return(
-            <button onClick={() => {setColorIndex(index)}} className={`overflow-hidden rounded-md ${colorIndex === index ? "border-2 border-black" : "border-none"}`}>
+          return (
+            <button onClick={() => { setColorIndex(index) }} className={`overflow-hidden rounded-md ${colorIndex === index ? "border-2 border-black" : "border-none"}`}>
               <img className={`w-[70px]  aspect-square object-cover`} src={color.images[0]} alt="" />
             </button>
           )

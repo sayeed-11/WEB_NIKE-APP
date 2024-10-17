@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 const productType = ["All Shoes", "Athletic", "Authentic", "Lather", "Canvas"];
 
@@ -6,7 +6,7 @@ const FilterBar = ({ hasFilter, setHeader, headerType }) => {
     const innerHeight = window.innerHeight
     const innerWidth = window.innerWidth;
     return (
-        <div style={{ height: innerWidth >= 1024 ? (innerHeight - 110) : (hasFilter ? 0 : (innerHeight - 210)) }} className={`lg:block fixed  ${hasFilter ? "w-[100%] lg:w-[0%] overflow-hidden px-0" : "overflow-y-auto w-full lg:w-[20%] lg:px-5"} lg:sticky lg:top-[115px] bg-white lg:bg-transparent bottom-0 lg:bottom-auto lg:h-auto space-y-5 font-nike transition-all duration-[0.3s] z-50 pb-5 lg:pb-0`}>
+        <div style={{ height: innerWidth >= 1024 ? (innerHeight - 110) : (hasFilter ? 0 : (innerHeight - 210)) }} className={`lg:block fixed  ${hasFilter ? "w-[100%] lg:w-[0%] overflow-hidden px-0" : "overflow-y-auto w-full lg:w-[20%] lg:px-5"} lg:sticky lg:top-[115px] bg-white lg:bg-transparent bottom-0 lg:bottom-auto lg:h-auto space-y-5 font-nike transition-all duration-[0.3s] z-30 pb-5 lg:pb-0`}>
             <Types setHeader={setHeader} headerType={headerType} />
             <div className='flex flex-col gap-y-5 lg:gap-y-5 px-5 lg:px-0'>
                 <Gender />

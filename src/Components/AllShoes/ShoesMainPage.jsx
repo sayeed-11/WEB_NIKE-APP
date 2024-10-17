@@ -39,8 +39,8 @@ const ShoesMainPage = () => {
     return (
         <div className='min-h-screen w-full bg-slate-100 box-border flex flex-col pt-[70px] space-y-5'>
             <NavigationBar />
-            <div className={`sticky top-[56px] ${shadowColor} z-40 bg-slate-100 flex justify-between transition-all duration-[0.3s] ${hasFilter ? "pl-5 sm:pl-10" : "pl-5"} pr-5 lg:pr-10 py-3 font-nike`}>
-                <h1 className={`${textSize} transition-all text-lime-600`}>{headerType}</h1>
+            <div className={`sticky top-[56px] ${shadowColor} z-40 bg-slate-100 flex justify-between transition-all duration-[0.3s] ${hasFilter ? "pl-3 sm:pl-10" : "pl-5"} pr-3 lg:pr-10 py-3 font-nike`}>
+                <h1 className={`${textSize} transition-all text-lime-600`}>{headerType} {`(${Shoes.length})`} </h1>
                 <div className='space-x-3 sm:space-x-10'>
                     <button onClick={() => {
                         setFilterValue(!hasFilter)
@@ -66,7 +66,7 @@ const ShoesMainPage = () => {
                     </button>
                 </div>
             </div>
-            <div className='relative lg:flex pb-[50px] sm:pb-[450px] justify-between'>
+            <div className='relative lg:flex pb-[50px] justify-between'>
                 <FilterBar hasFilter={hasFilter} setHeader={setHeader} headerType={headerType} />
                 <AllShoes hasFilter={hasFilter} JaordanShoes={Shoes} />
             </div>

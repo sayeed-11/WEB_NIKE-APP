@@ -31,9 +31,9 @@ const AllShoes = ({hasFilter, JaordanShoes}) => {
                         >
                             <div className='overflow-hidden  rounded-sm'>
                                 <button onClick={() => {
-                                    navigate('/ViewDetails')
+                                    navigate('/ViewDetails', { state: { myData: 'some value', data : item } })
                                     dispatch(set_data(item));
-                                }}><img className='-translate-y-16' src={item.colorsAvailable[0].images[0]} alt="" /></button>
+                                }}><img className='-translate-y-16' src={item.colorsAvailable[0].images[0]} alt={'nike'} /></button>
                                 {isHover && selected === item.colorsAvailable[0].style ?  <AvailableColor item={item} />  : <PriceDetails item={item}/>}
                             </div>
                         </button>

@@ -13,9 +13,11 @@ import {
     add_data_in_wishlist_array,
     remove_data_from_wishlist_array
 } from '../reduxStore/Actions';
+import { useNavigate } from 'react-router-dom';
 
 const PopularProducts = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const { cartArray } = useSelector(state => state.cartDataReducer)
     const { wishlistArray } = useSelector(state => state.wishlistDataReducer)
@@ -44,7 +46,9 @@ const PopularProducts = () => {
                 </div>
                 <div className='flex flex-row sm:flex-col items-center sm:items-start pb-5 sm:pb-0 gap-x-10'>
                     <p className='text-slate-500 font-text text-xs'>Distinctively integrate interoperable total linkage and covalent processes.</p>
-                    <button className='bg-lime-500 px-4 py-3 rounded-3xl text-white mt-5 flex md:block'>
+                    <button onClick={() => {
+                        navigate('/ShoesMainPage', {state : {JaordanShoes : shoes}})
+                    }} className='bg-lime-500 px-4 py-3 rounded-3xl text-white mt-5 flex md:block'>
                         <p className='w-20 sm:hidden text-xs'>See All</p>
                         <i className="fa-solid fa-arrow-right -rotate-45 hidden sm:block" />
                     </button>
@@ -94,7 +98,12 @@ const PopularProducts = () => {
                                             }
                                         </div>
                                     </div>
-                                    <button className=' bg-lime-500 w-[100%]  py-3 text-xs text-white rounded-md shadow-md text-slate-bg-slate-100 mt-1 flex justify-center items-center gap-x-3'>
+                                    <button onClick={
+                                            () => {
+                                                navigate('/ViewDetails', { state: { myData: 'some value', data : item } })
+                                                dispatch(set_data(item));
+                                            }
+                                        }  className=' bg-lime-500 w-[100%]  py-3 text-xs text-white rounded-md shadow-md text-slate-bg-slate-100 mt-1 flex justify-center items-center gap-x-3'>
                                         <span>Buy Now</span>
                                         <i className="fa-solid fa-arrow-right -rotate-45 text-xs text-white" />
                                     </button>

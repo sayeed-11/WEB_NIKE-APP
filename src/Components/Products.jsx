@@ -90,7 +90,7 @@ const Products = () => {
                                     id : item.colorsAvailable[0].style
                                 }
                             return (
-                                <div className='bg-gray-100 rounded-md shadow-md overflow-hidden relative grid grid-cols-2 h-auto sm:flex  sm:flex-col items-center max-w-[90%] sm:max-w-[300px] hover:bg-white hover:scale-[1.02] transition-all sm:py-5'>
+                                <div key={index} className='bg-gray-100 rounded-md shadow-md overflow-hidden relative grid grid-cols-2 h-auto sm:flex  sm:flex-col items-center max-w-[90%] sm:max-w-[300px] hover:bg-white hover:scale-[1.02] transition-all sm:py-5'>
                                     <div className='w-full grid p-5 relative'>
                                         <img className='-rotate-[30deg] sm:-translate-x-16 -translate-x-4 -translate-y-8 sm:-translate-y-14 scale-[1.55] sm:scale-[1.1] w-[100%] rounded-full aspect-square object-cover pointer-events-none' src={data.colorsAvailable[0].images[0]} alt="" />
                                         <div className=' flex items-start z-30 flex-col gap-y-1 absolute sm:right-0 sm:top-0 gap-x-2 px-2 py-1 rounded-ee-lg'>
@@ -129,7 +129,7 @@ const Products = () => {
                                         </div>
                                         <button onClick={
                                             () => {
-                                                navigate('/ViewDetails', { state: { myData: 'some value' } })
+                                                navigate('/ViewDetails', { state: { myData: 'some value', data : data } })
                                                 dispatch(set_data(data));
                                             }
                                         } className='bg-lime-500 flex justify-center items-center px-5 py-3 gap-x-3 sm:ga-x-1 text-xs rounded-full '>
